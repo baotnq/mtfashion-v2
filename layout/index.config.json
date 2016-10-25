@@ -1,0 +1,167 @@
+[
+    {
+        "name": "slug",
+        "displayName": "slug",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": true,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "layout",
+        "displayName": "layout",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": true,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "title",
+        "displayName": "title",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": false,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "header",
+        "displayName": "header",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": false,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "description",
+        "displayName": "description",
+        "type": "Array",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "permalink",
+        "displayName": "permalink",
+        "type": "Boolean",
+        "validations": [],
+        "required": false,
+        "defaultValue": false
+    },
+    {
+        "name": "objectNode",
+        "displayName": "objectNode",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "stringChild",
+                "displayName": "stringChild",
+                "type": "Text",
+                "validations": [],
+                "viewOnly": false,
+                "required": false,
+                "displayType": "ShortText",
+                "defaultValue": ""
+            },
+            {
+                "name": "numberChild",
+                "displayName": "numberChild",
+                "type": "Number",
+                "validations": [],
+                "required": false,
+                "displayType": "Number",
+                "defaultValue": 0
+            },
+            {
+                "name": "objectChild",
+                "displayName": "objectChild",
+                "type": "Object",
+                "validations": [],
+                "required": false,
+                "children": [
+                    {
+                        "name": "booleanChild",
+                        "displayName": "booleanChild",
+                        "type": "Boolean",
+                        "validations": [],
+                        "required": false,
+                        "defaultValue": false
+                    },
+                    {
+                        "name": "arrayChild",
+                        "displayName": "arrayChild",
+                        "type": "Array",
+                        "validations": [],
+                        "required": false,
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "arrayNumberNode",
+        "displayName": "arrayNumberNode",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "arrayStringNode",
+        "displayName": "arrayStringNode",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "arrayObjectNode",
+        "displayName": "arrayObjectNode",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "key",
+                "displayName": "key",
+                "type": "Text",
+                "displayType": "ShortText",
+                "validations": [],
+                "viewOnly": false,
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "name": "anotherKey",
+                "displayName": "anotherKey",
+                "type": "Boolean",
+                "validations": [],
+                "required": false,
+                "defaultValue": false
+            }
+        ]
+    },
+    {
+        "name": "__content__",
+        "displayName": "[Content]",
+        "type": "Text",
+        "displayType": "MarkDown",
+        "defaultValue": "",
+        "validations": [],
+        "hidden": false,
+        "viewOnly": false,
+        "required": false
+    }
+]
