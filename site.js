@@ -1,3 +1,5 @@
+var lunr_ = require('lunr');
+
 const site = {
     port:        8088,        // cổng server local sẻ sử dụng
     contentRoot: './content', // thư mục chứa content file cho metalsmith
@@ -83,48 +85,63 @@ site.metalsmith = {
         'gfm':         true,
         'tables':      true
     },
+    
+    'metalsmith-index': {},
+    
+    'metalsmith-lunr': [
+		{
+			indexPath: 'index.json',
+			fields: {
+				title: 1,
+				description: 1
+			}
+		},
+		{
+			indexPath: 'searchIndex.json',
+			fields: {
+				header: 1
+			}
+		}
+	],
+
+    'metalsmith-category': {
+		'_enable': true,
+		'directory': `${site.metadataRoot}/category`
+    },
+
+    'metalsmith-tag': {
+		'_enable': true,
+		'directory': `${site.metadataRoot}/tag`
+    },
 
     'metalsmith-collections':   {
         '_enable': true,
-        // collection theo file pattern + test limit
+         // collection theo file pattern + test limit
         'blog':    {
             'pattern': 'blog/**/*.html',
             'sortBy':  'date',
             'reverse': true,
         },
-        // collection theo key trong metadata `"collection": "baiviet"`
+         // collection theo key trong metadata `"collection": "baiviet"`
         'baiviet': {
             'sortBy':  'date',
             'reverse': true
         }
     },
 
-
-
-    'metalsmith-pagination':    {
-        '_enable': true,
-        'collections.blog':    {
-            'perPage':   1,
-            'layout':    'blog-list.html',
-            'first':     'blog/index.html',
-            'path':      'blog/:num/index.html',
-            'noPageOne': true,
-            'pageMetadata': {
-              'title': 'Title of metalsmith-pagination file site.js'
-            }
-        },
-        // // test filter
-        // 'collections.baiviet': {
-        //     'perPage':   1,
-        //     'layout':    'blog.html',
-        //     'first':     'baiviet/index.html',
-        //     'path':      'baiviet/:num/index.html',
-        //     'filter':    meta => {
-        //         return meta.dacbiet === false;
-        //     },
-        //     'noPageOne': true
-        // }
-    },
+    //'metalsmith-pagination':    {
+    //    '_enable': true,
+    //    'collections.blog':    {
+    //        'perPage':   1,
+    //        'layout':    'blog-list.html',
+    //        'first':     'blog/index.html',
+    //        'path':      'blog/:num/index.html',
+    //        'noPageOne': true,
+    //        'pageMetadata': {
+    //          'title': 'Title of metalsmith-pagination file site.js'
+    //        }
+    //    },
+    //},
 
     'metalsmith-permalinks':    {
         '_enable':  true,

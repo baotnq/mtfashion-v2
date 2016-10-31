@@ -111,16 +111,16 @@
         ]
     },
     {
-        "name": "arrayNumberNode",
-        "displayName": "arrayNumberNode",
+        "name": "arrayStringNode",
+        "displayName": "arrayStringNode",
         "type": "Array",
         "validations": [],
         "required": false,
         "children": []
     },
     {
-        "name": "arrayStringNode",
-        "displayName": "arrayStringNode",
+        "name": "arrayNumberNode",
+        "displayName": "arrayNumberNode",
         "type": "Array",
         "validations": [],
         "required": false,
