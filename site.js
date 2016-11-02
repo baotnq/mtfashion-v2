@@ -86,7 +86,10 @@ site.metalsmith = {
         'tables':      true
     },
     
-    'metalsmith-index': {},
+    'metalsmith-index': {
+		indexPath: 'index.json',
+		fields: ['title']
+    },
     
     'metalsmith-lunr': [
 		{
