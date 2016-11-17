@@ -1,8 +1,7 @@
 /**
- * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 0.5.12
- * Copyright (C) 2015 Oliver Nightingale
- * MIT Licensed
- * @license
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 0.7.2
+ * Copyright (C) 2016 Oliver Nightingale
+ * @license MIT
  */
 
 ;(function(){
@@ -56,10 +55,10 @@ var lunr = function (config) {
   return idx
 }
 
-lunr.version = "0.5.12"
+lunr.version = "0.7.2"
 /*!
  * lunr.utils
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -81,9 +80,27 @@ lunr.utils.warn = (function (global) {
   }
 })(this)
 
+/**
+ * Convert an object to a string.
+ *
+ * In the case of `null` and `undefined` the function returns
+ * the empty string, in all other cases the result of calling
+ * `toString` on the passed object is returned.
+ *
+ * @param {Any} obj The object to convert to a string.
+ * @return {String} string representation of the passed object.
+ * @memberOf Utils
+ */
+lunr.utils.asString = function (obj) {
+  if (obj === void 0 || obj === null) {
+    return ""
+  } else {
+    return obj.toString()
+  }
+}
 /*!
  * lunr.EventEmitter
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -165,27 +182,103 @@ lunr.EventEmitter.prototype.hasHandler = function (name) {
 
 /*!
  * lunr.tokenizer
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
  * A function for splitting a string into tokens ready to be inserted into
- * the search index.
+ * the search index. Uses `lunr.tokenizer.separator` to split strings, change
+ * the value of this property to change how strings are split into tokens.
  *
  * @module
  * @param {String} obj The string to convert into tokens
+ * @see lunr.tokenizer.separator
  * @returns {Array}
  */
 lunr.tokenizer = function (obj) {
   if (!arguments.length || obj == null || obj == undefined) return []
-  if (Array.isArray(obj)) return obj.map(function (t) { return t.toLowerCase() })
+  if (Array.isArray(obj)) return obj.map(function (t) { return lunr.utils.asString(t).toLowerCase() })
 
-  return obj.toString().trim().toLowerCase().split(/[\s\-]+/)
+  // TODO: This exists so that the deprecated property lunr.tokenizer.seperator can still be used. By
+  // default it is set to false and so the correctly spelt lunr.tokenizer.separator is used unless
+  // the user is using the old property to customise the tokenizer.
+  //
+  // This should be removed when version 1.0.0 is released.
+  var separator = lunr.tokenizer.seperator || lunr.tokenizer.separator
+
+  return obj.toString().trim().toLowerCase().split(separator)
 }
 
+/**
+ * This property is legacy alias for lunr.tokenizer.separator to maintain backwards compatability.
+ * When introduced the token was spelt incorrectly. It will remain until 1.0.0 when it will be removed,
+ * all code should use the correctly spelt lunr.tokenizer.separator property instead.
+ *
+ * @static
+ * @see lunr.tokenizer.separator
+ * @deprecated since 0.7.2 will be removed in 1.0.0
+ * @private
+ * @see lunr.tokenizer
+ */
+lunr.tokenizer.seperator = false
+
+/**
+ * The sperator used to split a string into tokens. Override this property to change the behaviour of
+ * `lunr.tokenizer` behaviour when tokenizing strings. By default this splits on whitespace and hyphens.
+ *
+ * @static
+ * @see lunr.tokenizer
+ */
+lunr.tokenizer.separator = /[\s\-]+/
+
+/**
+ * Loads a previously serialised tokenizer.
+ *
+ * A tokenizer function to be loaded must already be registered with lunr.tokenizer.
+ * If the serialised tokenizer has not been registered then an error will be thrown.
+ *
+ * @param {String} label The label of the serialised tokenizer.
+ * @returns {Function}
+ * @memberOf tokenizer
+ */
+lunr.tokenizer.load = function (label) {
+  var fn = this.registeredFunctions[label]
+
+  if (!fn) {
+    throw new Error('Cannot load un-registered function: ' + label)
+  }
+
+  return fn
+}
+
+lunr.tokenizer.label = 'default'
+
+lunr.tokenizer.registeredFunctions = {
+  'default': lunr.tokenizer
+}
+
+/**
+ * Register a tokenizer function.
+ *
+ * Functions that are used as tokenizers should be registered if they are to be used with a serialised index.
+ *
+ * Registering a function does not add it to an index, functions must still be associated with a specific index for them to be used when indexing and searching documents.
+ *
+ * @param {Function} fn The function to register.
+ * @param {String} label The label to register this function with
+ * @memberOf tokenizer
+ */
+lunr.tokenizer.registerFunction = function (fn, label) {
+  if (label in this.registeredFunctions) {
+    lunr.utils.warn('Overwriting existing tokenizer: ' + label)
+  }
+
+  fn.label = label
+  this.registeredFunctions[label] = fn
+}
 /*!
  * lunr.Pipeline
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -380,10 +473,10 @@ lunr.Pipeline.prototype.run = function (tokens) {
 
     for (var j = 0; j < stackLength; j++) {
       token = this._stack[j](token, i, tokens)
-      if (token === void 0) break
+      if (token === void 0 || token === '') break
     };
 
-    if (token !== void 0) out.push(token)
+    if (token !== void 0 && token !== '') out.push(token)
   };
 
   return out
@@ -415,7 +508,7 @@ lunr.Pipeline.prototype.toJSON = function () {
 }
 /*!
  * lunr.Vector
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -546,7 +639,7 @@ lunr.Vector.prototype.similarity = function (otherVector) {
 }
 /*!
  * lunr.SortedSet
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -770,7 +863,9 @@ lunr.SortedSet.prototype.union = function (otherSet) {
 
   unionSet = longSet.clone()
 
-  unionSet.add.apply(unionSet, shortSet.toArray())
+  for(var i = 0, shortSetElements = shortSet.toArray(); i < shortSetElements.length; i++){
+    unionSet.add(shortSetElements[i])
+  }
 
   return unionSet
 }
@@ -786,7 +881,7 @@ lunr.SortedSet.prototype.toJSON = function () {
 }
 /*!
  * lunr.Index
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -804,6 +899,7 @@ lunr.Index = function () {
   this.tokenStore = new lunr.TokenStore
   this.corpusTokens = new lunr.SortedSet
   this.eventEmitter =  new lunr.EventEmitter
+  this.tokenizerFn = lunr.tokenizer
 
   this._idfCache = {}
 
@@ -857,6 +953,7 @@ lunr.Index.load = function (serialisedData) {
   idx._fields = serialisedData.fields
   idx._ref = serialisedData.ref
 
+  idx.tokenizer(lunr.tokenizer.load(serialisedData.tokenizer))
   idx.documentStore = lunr.Store.load(serialisedData.documentStore)
   idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
   idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
@@ -898,6 +995,9 @@ lunr.Index.prototype.field = function (fieldName, opts) {
  * This should only be changed before adding documents to the index, changing
  * the ref property without resetting the index can lead to unexpected results.
  *
+ * The value of ref can be of any type but it _must_ be stably comparable and
+ * orderable.
+ *
  * @param {String} refName The property to use to uniquely identify the
  * documents in the index.
  * @param {Boolean} emitEvent Whether to emit add events, defaults to true
@@ -906,6 +1006,28 @@ lunr.Index.prototype.field = function (fieldName, opts) {
  */
 lunr.Index.prototype.ref = function (refName) {
   this._ref = refName
+  return this
+}
+
+/**
+ * Sets the tokenizer used for this index.
+ *
+ * By default the index will use the default tokenizer, lunr.tokenizer. The tokenizer
+ * should only be changed before adding documents to the index. Changing the tokenizer
+ * without re-building the index can lead to unexpected results.
+ *
+ * @param {Function} fn The function to use as a tokenizer.
+ * @returns {lunr.Index}
+ * @memberOf Index
+ */
+lunr.Index.prototype.tokenizer = function (fn) {
+  var isRegistered = fn.label && (fn.label in lunr.tokenizer.registeredFunctions)
+
+  if (!isRegistered) {
+    lunr.utils.warn('Function is not a registered tokenizer. This may cause problems when serialising the index')
+  }
+
+  this.tokenizerFn = fn
   return this
 }
 
@@ -931,26 +1053,39 @@ lunr.Index.prototype.add = function (doc, emitEvent) {
       emitEvent = emitEvent === undefined ? true : emitEvent
 
   this._fields.forEach(function (field) {
-    var fieldTokens = this.pipeline.run(lunr.tokenizer(doc[field.name]))
+    var fieldTokens = this.pipeline.run(this.tokenizerFn(doc[field.name]))
 
     docTokens[field.name] = fieldTokens
-    lunr.SortedSet.prototype.add.apply(allDocumentTokens, fieldTokens)
+
+    for (var i = 0; i < fieldTokens.length; i++) {
+      var token = fieldTokens[i]
+      allDocumentTokens.add(token)
+      this.corpusTokens.add(token)
+    }
   }, this)
 
   this.documentStore.set(docRef, allDocumentTokens)
-  lunr.SortedSet.prototype.add.apply(this.corpusTokens, allDocumentTokens.toArray())
 
   for (var i = 0; i < allDocumentTokens.length; i++) {
     var token = allDocumentTokens.elements[i]
-    var tf = this._fields.reduce(function (memo, field) {
-      var fieldLength = docTokens[field.name].length
+    var tf = 0;
 
-      if (!fieldLength) return memo
+    for (var j = 0; j < this._fields.length; j++){
+      var field = this._fields[j]
+      var fieldTokens = docTokens[field.name]
+      var fieldLength = fieldTokens.length
 
-      var tokenCount = docTokens[field.name].filter(function (t) { return t === token }).length
+      if (!fieldLength) continue
 
-      return memo + (tokenCount / fieldLength * field.boost)
-    }, 0)
+      var tokenCount = 0
+      for (var k = 0; k < fieldLength; k++){
+        if (fieldTokens[k] === token){
+          tokenCount++
+        }
+      }
+
+      tf += (tokenCount / fieldLength * field.boost)
+    }
 
     this.tokenStore.add(token, { ref: docRef, tf: tf })
   };
@@ -1069,7 +1204,7 @@ lunr.Index.prototype.idf = function (term) {
  * @memberOf Index
  */
 lunr.Index.prototype.search = function (query) {
-  var queryTokens = this.pipeline.run(lunr.tokenizer(query)),
+  var queryTokens = this.pipeline.run(this.tokenizerFn(query)),
       queryVector = new lunr.Vector,
       documentSets = [],
       fieldBoosts = this._fields.reduce(function (memo, f) { return memo + f.boost }, 0)
@@ -1105,7 +1240,14 @@ lunr.Index.prototype.search = function (query) {
         if (pos > -1) queryVector.insert(pos, tf * idf * similarityBoost)
 
         // add all the documents that have this key into a set
-        Object.keys(self.tokenStore.get(key)).forEach(function (ref) { set.add(ref) })
+        // ensuring that the type of key is preserved
+        var matchingDocuments = self.tokenStore.get(key),
+            refs = Object.keys(matchingDocuments),
+            refsLen = refs.length
+
+        for (var i = 0; i < refsLen; i++) {
+          set.add(matchingDocuments[refs[i]].ref)
+        }
 
         return memo.union(set)
       }, new lunr.SortedSet)
@@ -1167,6 +1309,7 @@ lunr.Index.prototype.toJSON = function () {
     version: lunr.version,
     fields: this._fields,
     ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
     documentStore: this.documentStore.toJSON(),
     tokenStore: this.tokenStore.toJSON(),
     corpusTokens: this.corpusTokens.toJSON(),
@@ -1207,7 +1350,7 @@ lunr.Index.prototype.use = function (plugin) {
 }
 /*!
  * lunr.Store
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -1303,7 +1446,7 @@ lunr.Store.prototype.toJSON = function () {
 
 /*!
  * lunr.stemmer
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  * Includes code from - http://tartarus.org/~martin/PorterStemmer/js.txt
  */
 
@@ -1521,8 +1664,32 @@ lunr.stemmer = (function(){
 lunr.Pipeline.registerFunction(lunr.stemmer, 'stemmer')
 /*!
  * lunr.stopWordFilter
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
+
+/**
+ * lunr.generateStopWordFilter builds a stopWordFilter function from the provided
+ * list of stop words.
+ *
+ * The built in lunr.stopWordFilter is built using this generator and can be used
+ * to generate custom stopWordFilters for applications or non English languages.
+ *
+ * @module
+ * @param {Array} token The token to pass through the filter
+ * @returns {Function}
+ * @see lunr.Pipeline
+ * @see lunr.stopWordFilter
+ */
+lunr.generateStopWordFilter = function (stopWords) {
+  var words = stopWords.reduce(function (memo, stopWord) {
+    memo[stopWord] = stopWord
+    return memo
+  }, {})
+
+  return function (token) {
+    if (token && words[token] !== token) return token
+  }
+}
 
 /**
  * lunr.stopWordFilter is an English language stop word list filter, any words
@@ -1536,136 +1703,132 @@ lunr.Pipeline.registerFunction(lunr.stemmer, 'stemmer')
  * @returns {String}
  * @see lunr.Pipeline
  */
-lunr.stopWordFilter = function (token) {
-  if (token && lunr.stopWordFilter.stopWords[token] !== token) return token;
-}
-
-lunr.stopWordFilter.stopWords = {
-  'a': 'a',
-  'able': 'able',
-  'about': 'about',
-  'across': 'across',
-  'after': 'after',
-  'all': 'all',
-  'almost': 'almost',
-  'also': 'also',
-  'am': 'am',
-  'among': 'among',
-  'an': 'an',
-  'and': 'and',
-  'any': 'any',
-  'are': 'are',
-  'as': 'as',
-  'at': 'at',
-  'be': 'be',
-  'because': 'because',
-  'been': 'been',
-  'but': 'but',
-  'by': 'by',
-  'can': 'can',
-  'cannot': 'cannot',
-  'could': 'could',
-  'dear': 'dear',
-  'did': 'did',
-  'do': 'do',
-  'does': 'does',
-  'either': 'either',
-  'else': 'else',
-  'ever': 'ever',
-  'every': 'every',
-  'for': 'for',
-  'from': 'from',
-  'get': 'get',
-  'got': 'got',
-  'had': 'had',
-  'has': 'has',
-  'have': 'have',
-  'he': 'he',
-  'her': 'her',
-  'hers': 'hers',
-  'him': 'him',
-  'his': 'his',
-  'how': 'how',
-  'however': 'however',
-  'i': 'i',
-  'if': 'if',
-  'in': 'in',
-  'into': 'into',
-  'is': 'is',
-  'it': 'it',
-  'its': 'its',
-  'just': 'just',
-  'least': 'least',
-  'let': 'let',
-  'like': 'like',
-  'likely': 'likely',
-  'may': 'may',
-  'me': 'me',
-  'might': 'might',
-  'most': 'most',
-  'must': 'must',
-  'my': 'my',
-  'neither': 'neither',
-  'no': 'no',
-  'nor': 'nor',
-  'not': 'not',
-  'of': 'of',
-  'off': 'off',
-  'often': 'often',
-  'on': 'on',
-  'only': 'only',
-  'or': 'or',
-  'other': 'other',
-  'our': 'our',
-  'own': 'own',
-  'rather': 'rather',
-  'said': 'said',
-  'say': 'say',
-  'says': 'says',
-  'she': 'she',
-  'should': 'should',
-  'since': 'since',
-  'so': 'so',
-  'some': 'some',
-  'than': 'than',
-  'that': 'that',
-  'the': 'the',
-  'their': 'their',
-  'them': 'them',
-  'then': 'then',
-  'there': 'there',
-  'these': 'these',
-  'they': 'they',
-  'this': 'this',
-  'tis': 'tis',
-  'to': 'to',
-  'too': 'too',
-  'twas': 'twas',
-  'us': 'us',
-  'wants': 'wants',
-  'was': 'was',
-  'we': 'we',
-  'were': 'were',
-  'what': 'what',
-  'when': 'when',
-  'where': 'where',
-  'which': 'which',
-  'while': 'while',
-  'who': 'who',
-  'whom': 'whom',
-  'why': 'why',
-  'will': 'will',
-  'with': 'with',
-  'would': 'would',
-  'yet': 'yet',
-  'you': 'you',
-  'your': 'your'
-}
+lunr.stopWordFilter = lunr.generateStopWordFilter([
+  'a',
+  'able',
+  'about',
+  'across',
+  'after',
+  'all',
+  'almost',
+  'also',
+  'am',
+  'among',
+  'an',
+  'and',
+  'any',
+  'are',
+  'as',
+  'at',
+  'be',
+  'because',
+  'been',
+  'but',
+  'by',
+  'can',
+  'cannot',
+  'could',
+  'dear',
+  'did',
+  'do',
+  'does',
+  'either',
+  'else',
+  'ever',
+  'every',
+  'for',
+  'from',
+  'get',
+  'got',
+  'had',
+  'has',
+  'have',
+  'he',
+  'her',
+  'hers',
+  'him',
+  'his',
+  'how',
+  'however',
+  'i',
+  'if',
+  'in',
+  'into',
+  'is',
+  'it',
+  'its',
+  'just',
+  'least',
+  'let',
+  'like',
+  'likely',
+  'may',
+  'me',
+  'might',
+  'most',
+  'must',
+  'my',
+  'neither',
+  'no',
+  'nor',
+  'not',
+  'of',
+  'off',
+  'often',
+  'on',
+  'only',
+  'or',
+  'other',
+  'our',
+  'own',
+  'rather',
+  'said',
+  'say',
+  'says',
+  'she',
+  'should',
+  'since',
+  'so',
+  'some',
+  'than',
+  'that',
+  'the',
+  'their',
+  'them',
+  'then',
+  'there',
+  'these',
+  'they',
+  'this',
+  'tis',
+  'to',
+  'too',
+  'twas',
+  'us',
+  'wants',
+  'was',
+  'we',
+  'were',
+  'what',
+  'when',
+  'where',
+  'which',
+  'while',
+  'who',
+  'whom',
+  'why',
+  'will',
+  'with',
+  'would',
+  'yet',
+  'you',
+  'your'
+])
 
 lunr.Pipeline.registerFunction(lunr.stopWordFilter, 'stopWordFilter')
 /*!
  * lunr.trimmer
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  */
 
 /**
@@ -1683,15 +1846,13 @@ lunr.Pipeline.registerFunction(lunr.stopWordFilter, 'stopWordFilter')
  * @see lunr.Pipeline
  */
 lunr.trimmer = function (token) {
-  var result = token.replace(/^\W+/, '')
-                    .replace(/\W+$/, '')
-  return result === '' ? undefined : result
+  return token.replace(/^\W+/, '').replace(/\W+$/, '')
 }
 
 lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer')
 /*!
  * lunr.stemmer
- * Copyright (C) 2015 Oliver Nightingale
+ * Copyright (C) 2016 Oliver Nightingale
  * Includes code from - http://tartarus.org/~martin/PorterStemmer/js.txt
  */
 
@@ -1737,7 +1898,7 @@ lunr.TokenStore.load = function (serialisedData) {
  */
 lunr.TokenStore.prototype.add = function (token, doc, root) {
   var root = root || this.root,
-      key = token[0],
+      key = token.charAt(0),
       rest = token.slice(1)
 
   if (!(key in root)) root[key] = {docs: {}}
@@ -1767,9 +1928,9 @@ lunr.TokenStore.prototype.has = function (token) {
   var node = this.root
 
   for (var i = 0; i < token.length; i++) {
-    if (!node[token[i]]) return false
+    if (!node[token.charAt(i)]) return false
 
-    node = node[token[i]]
+    node = node[token.charAt(i)]
   }
 
   return true
@@ -1793,9 +1954,9 @@ lunr.TokenStore.prototype.getNode = function (token) {
   var node = this.root
 
   for (var i = 0; i < token.length; i++) {
-    if (!node[token[i]]) return {}
+    if (!node[token.charAt(i)]) return {}
 
-    node = node[token[i]]
+    node = node[token.charAt(i)]
   }
 
   return node
@@ -1837,8 +1998,8 @@ lunr.TokenStore.prototype.remove = function (token, ref) {
   var node = this.root
 
   for (var i = 0; i < token.length; i++) {
-    if (!(token[i] in node)) return
-    node = node[token[i]]
+    if (!(token.charAt(i) in node)) return
+    node = node[token.charAt(i)]
   }
 
   delete node.docs[ref]
@@ -1881,7 +2042,6 @@ lunr.TokenStore.prototype.toJSON = function () {
     length: this.length
   }
 }
-
 
   /**
    * export the module via AMD, CommonJS or as a browser global
