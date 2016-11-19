@@ -1,48 +1,28 @@
 [
     {
-        "name": "slug",
-        "displayName": "slug",
-        "type": "Text",
-        "validations": [],
-        "viewOnly": true,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
-    },
-    {
-        "name": "layout",
-        "displayName": "layout",
-        "type": "Text",
-        "validations": [],
-        "viewOnly": true,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
-    },
-    {
         "name": "title",
         "displayName": "title",
-        "type": "DateTime",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
         "validations": [],
         "viewOnly": false,
-        "required": false,
-        "displayType": "DateTime",
-        "defaultValue": ""
+        "required": false
     },
     {
         "name": "header",
         "displayName": "header",
         "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
         "validations": [],
         "viewOnly": false,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
+        "required": false
     },
     {
         "name": "description",
         "displayName": "description",
-        "type": "Array",
+        "type": "Text",
         "displayType": "ShortText",
         "defaultValue": "",
         "validations": [],
@@ -53,9 +33,9 @@
         "name": "permalink",
         "displayName": "permalink",
         "type": "Boolean",
+        "defaultValue": false,
         "validations": [],
-        "required": false,
-        "defaultValue": false
+        "required": false
     },
     {
         "name": "objectNode",
@@ -68,20 +48,20 @@
                 "name": "stringChild",
                 "displayName": "stringChild",
                 "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
                 "validations": [],
                 "viewOnly": false,
-                "required": false,
-                "displayType": "ShortText",
-                "defaultValue": ""
+                "required": false
             },
             {
                 "name": "numberChild",
                 "displayName": "numberChild",
                 "type": "Number",
-                "validations": [],
-                "required": false,
                 "displayType": "Number",
-                "defaultValue": 0
+                "defaultValue": 0,
+                "validations": [],
+                "required": false
             },
             {
                 "name": "objectChild",
@@ -94,9 +74,9 @@
                         "name": "booleanChild",
                         "displayName": "booleanChild",
                         "type": "Boolean",
+                        "defaultValue": false,
                         "validations": [],
-                        "required": false,
-                        "defaultValue": false
+                        "required": false
                     },
                     {
                         "name": "arrayChild",
@@ -111,16 +91,16 @@
         ]
     },
     {
-        "name": "arrayStringNode",
-        "displayName": "arrayStringNode",
+        "name": "arrayNumberNode",
+        "displayName": "arrayNumberNode",
         "type": "Array",
         "validations": [],
         "required": false,
         "children": []
     },
     {
-        "name": "arrayNumberNode",
-        "displayName": "arrayNumberNode",
+        "name": "arrayStringNode",
+        "displayName": "arrayStringNode",
         "type": "Array",
         "validations": [],
         "required": false,
@@ -138,20 +118,40 @@
                 "displayName": "key",
                 "type": "Text",
                 "displayType": "ShortText",
+                "defaultValue": "",
                 "validations": [],
                 "viewOnly": false,
-                "required": false,
-                "defaultValue": ""
+                "required": false
             },
             {
                 "name": "anotherKey",
                 "displayName": "anotherKey",
                 "type": "Boolean",
+                "defaultValue": false,
                 "validations": [],
-                "required": false,
-                "defaultValue": false
+                "required": false
             }
         ]
+    },
+    {
+        "name": "slug",
+        "displayName": "slug",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": true,
+        "required": false
+    },
+    {
+        "name": "layout",
+        "displayName": "layout",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": true,
+        "required": false
     },
     {
         "name": "__content__",
@@ -165,8 +165,8 @@
         "required": true
     },
     {
-        "name": "publishTime",
-        "displayName": "publishTime",
+        "name": "publishDate",
+        "displayName": "Publish Date",
         "type": "DateTime",
         "displayType": "DateTime",
         "defaultValue": "",
@@ -187,14 +187,31 @@
         "required": true
     },
     {
-        "name": "publishDate",
-        "displayName": "Publish Date",
-        "type": "DateTime",
+        "name": "date",
+        "displayName": "date",
         "displayType": "DateTime",
+        "type": "DateTime",
         "defaultValue": "",
         "validations": [],
-        "hidden": false,
         "viewOnly": false,
-        "required": true
+        "required": false
+    },
+    {
+        "name": "category",
+        "displayName": "category",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "tag",
+        "displayName": "tag",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
     }
 ]
