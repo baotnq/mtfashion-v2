@@ -59,7 +59,7 @@
                 "displayName": "numberChild",
                 "type": "Number",
                 "displayType": "Number",
-                "defaultValue": "",
+                "defaultValue": 0,
                 "validations": [],
                 "required": false,
                 "viewOnly": false

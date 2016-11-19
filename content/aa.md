@@ -2,12 +2,12 @@
 {
     "title": "aa",
     "slug": "aa",
-    "description": "AAAA",    
+    "description": "AAAA",
     "key": "AAAAXXAAAA",
-    "header" : "hohoho",
+    "header": "hohoho",
     "category": "",
     "tag": [],
-    "layout": "",
+    "layout": "delete.html",
     "date": "30-09-2016 11:55:04"
 }
 ---
