@@ -59,9 +59,10 @@
                 "displayName": "numberChild",
                 "type": "Number",
                 "displayType": "Number",
-                "defaultValue": 0,
+                "defaultValue": "",
                 "validations": [],
-                "required": false
+                "required": false,
+                "viewOnly": false
             },
             {
                 "name": "objectChild",
