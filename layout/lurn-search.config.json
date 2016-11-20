@@ -1,0 +1,195 @@
+[
+    {
+        "name": "title",
+        "displayName": "title",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "header",
+        "displayName": "header",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "description",
+        "displayName": "description",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "permalink",
+        "displayName": "permalink",
+        "type": "Boolean",
+        "defaultValue": false,
+        "validations": [],
+        "required": false
+    },
+    {
+        "name": "objectNode",
+        "displayName": "objectNode",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "stringChild",
+                "displayName": "stringChild",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "numberChild",
+                "displayName": "numberChild",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "objectChild",
+                "displayName": "objectChild",
+                "type": "Object",
+                "validations": [],
+                "required": false,
+                "children": [
+                    {
+                        "name": "booleanChild",
+                        "displayName": "booleanChild",
+                        "type": "Boolean",
+                        "defaultValue": false,
+                        "validations": [],
+                        "required": false
+                    },
+                    {
+                        "name": "arrayChild",
+                        "displayName": "arrayChild",
+                        "type": "Array",
+                        "validations": [],
+                        "required": false,
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "arrayNumberNode",
+        "displayName": "arrayNumberNode",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "arrayStringNode",
+        "displayName": "arrayStringNode",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "arrayObjectNode",
+        "displayName": "arrayObjectNode",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "date",
+        "displayName": "date",
+        "displayType": "DateTime",
+        "type": "DateTime",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "slug",
+        "displayName": "slug",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": true,
+        "required": false
+    },
+    {
+        "name": "layout",
+        "displayName": "layout",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": true,
+        "required": false
+    },
+    {
+        "name": "publishDate",
+        "displayName": "publishDate",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "draft",
+        "displayName": "draft",
+        "type": "Boolean",
+        "defaultValue": false,
+        "validations": [],
+        "required": false
+    },
+    {
+        "name": "category",
+        "displayName": "category",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "tag",
+        "displayName": "tag",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "__content__",
+        "displayName": "[Content]",
+        "type": "Text",
+        "displayType": "MarkDown",
+        "defaultValue": "",
+        "validations": [],
+        "hidden": false,
+        "viewOnly": false,
+        "required": true
+    }
+]

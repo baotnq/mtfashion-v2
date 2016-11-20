@@ -1,0 +1,101 @@
+[
+    {
+        "name": "slug",
+        "displayName": "slug",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": true,
+        "required": false
+    },
+    {
+        "name": "category",
+        "displayName": "category",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "tag",
+        "displayName": "tag",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "layout",
+        "displayName": "layout",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": true,
+        "required": false
+    },
+    {
+        "name": "__content__",
+        "displayName": "[Content]",
+        "type": "Text",
+        "displayType": "MarkDown",
+        "defaultValue": "",
+        "validations": [],
+        "hidden": false,
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "title",
+        "displayName": "title",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "description",
+        "displayName": "description",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "key",
+        "displayName": "key",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "header",
+        "displayName": "header",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "date",
+        "displayName": "date",
+        "displayType": "DateTime",
+        "type": "DateTime",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    }
+]
