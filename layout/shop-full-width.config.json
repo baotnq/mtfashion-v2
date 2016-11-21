@@ -76,16 +76,6 @@
         "required": false
     },
     {
-        "name": "publishDate",
-        "displayName": "publishDate",
-        "type": "Text",
-        "displayType": "ShortText",
-        "defaultValue": "",
-        "validations": [],
-        "viewOnly": false,
-        "required": false
-    },
-    {
         "name": "__content__",
         "displayName": "[Content]",
         "type": "Text",
