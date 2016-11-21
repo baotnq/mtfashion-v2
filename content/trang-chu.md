@@ -7,7 +7,7 @@
     "title": "trang chủ",
     "description": "",
     "date": "2016-11-19T08:48:49.361Z",
-    "draft": true,
+    "draft": false,
     "publishDate": ""
 }
 ---
