@@ -69,10 +69,10 @@
         "required": false
     },
     {
-        "name": "date",
-        "displayName": "date",
-        "displayType": "DateTime",
-        "type": "DateTime",
+        "name": "SKU",
+        "displayName": "SKU",
+        "type": "Text",
+        "displayType": "ShortText",
         "defaultValue": "",
         "validations": [],
         "viewOnly": false,
@@ -153,5 +153,15 @@
                 "required": false
             }
         ]
+    },
+    {
+        "name": "date",
+        "displayName": "date",
+        "displayType": "DateTime",
+        "type": "DateTime",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
     }
 ]
