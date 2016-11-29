@@ -49,8 +49,8 @@
         "required": false
     },
     {
-        "name": "title",
-        "displayName": "title",
+        "name": "SKU",
+        "displayName": "SKU",
         "type": "Text",
         "displayType": "ShortText",
         "defaultValue": "",
@@ -69,8 +69,8 @@
         "required": false
     },
     {
-        "name": "SKU",
-        "displayName": "SKU",
+        "name": "title",
+        "displayName": "title",
         "type": "Text",
         "displayType": "ShortText",
         "defaultValue": "",
