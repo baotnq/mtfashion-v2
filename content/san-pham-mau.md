@@ -14,6 +14,12 @@
     "sizes" : [
     {
       "sizeName" : "M"
+    },
+    {
+      "sizeName" : "L"
+    },
+    {
+      "sizeName" : "XL"
     }
     ],
     "colors" : [
