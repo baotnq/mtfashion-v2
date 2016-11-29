@@ -126,35 +126,32 @@
         ]
     },
     {
-        "name": "colorName",
-        "displayName": "Màu",
+        "name": "colors",
+        "displayName": "colors",
         "type": "Array",
         "validations": [],
         "required": false,
         "children": [
             {
                 "name": "colorName",
-                "displayName": "Màu",
+                "displayName": "colorName",
                 "type": "Text",
                 "displayType": "ShortText",
-                "defaultValue": "Trắng",
+                "defaultValue": "",
                 "validations": [],
                 "viewOnly": false,
                 "required": false
             },
             {
                 "name": "colorCode",
-                "displayName": "Mã Màu",
+                "displayName": "colorCode",
                 "type": "Text",
                 "displayType": "ShortText",
-                "defaultValue": "FFFFF",
+                "defaultValue": "",
                 "validations": [],
                 "viewOnly": false,
                 "required": false
             }
-        ],
-        "displayType": "ShortText",
-        "defaultValue": "Trắng",
-        "viewOnly": false
+        ]
     }
 ]
