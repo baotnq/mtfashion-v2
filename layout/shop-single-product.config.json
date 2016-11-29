@@ -105,5 +105,56 @@
                 "required": false
             }
         ]
+    },
+    {
+        "name": "sizes",
+        "displayName": "sizes",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "sizeName",
+                "displayName": "sizeName",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
+    },
+    {
+        "name": "colorName",
+        "displayName": "Màu",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "colorName",
+                "displayName": "Màu",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "Trắng",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "colorCode",
+                "displayName": "Mã Màu",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "FFFFF",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ],
+        "displayType": "ShortText",
+        "defaultValue": "Trắng",
+        "viewOnly": false
     }
 ]

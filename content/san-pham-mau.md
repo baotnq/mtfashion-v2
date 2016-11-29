@@ -10,6 +10,12 @@
     "price": {
         "currentPrice": 300000,
         "previousPrice": 5000000
+    },
+    "colors" : [
+    { 
+       "colorName" : "Trắng",
+       "colorCode" : "#FFFFF"
     }
+    ]
 }
 ---
