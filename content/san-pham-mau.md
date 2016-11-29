@@ -11,6 +11,11 @@
         "currentPrice": 300000,
         "previousPrice": 5000000
     },
+    "sizes" : [
+    {
+      "sizeName" : "M"
+    }
+    ],
     "colors" : [
     { 
        "colorName" : "Trắng",
