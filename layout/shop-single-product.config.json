@@ -59,8 +59,8 @@
         "required": false
     },
     {
-        "name": "description",
-        "displayName": "description",
+        "name": "title",
+        "displayName": "title",
         "type": "Text",
         "displayType": "ShortText",
         "defaultValue": "",
@@ -69,8 +69,8 @@
         "required": false
     },
     {
-        "name": "title",
-        "displayName": "title",
+        "name": "description",
+        "displayName": "description",
         "type": "Text",
         "displayType": "ShortText",
         "defaultValue": "",
