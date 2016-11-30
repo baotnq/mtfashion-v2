@@ -49,6 +49,16 @@
         "required": false
     },
     {
+        "name": "SKU",
+        "displayName": "SKU",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
         "name": "title",
         "displayName": "title",
         "type": "Text",
@@ -67,6 +77,82 @@
         "validations": [],
         "viewOnly": false,
         "required": false
+    },
+    {
+        "name": "price",
+        "displayName": "Giá Sản Phẩm",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "currentPrice",
+                "displayName": "Giá Bán",
+                "type": "Number",
+                "displayType": "Number",
+                "defaultValue": 300000,
+                "validations": [],
+                "required": false
+            },
+            {
+                "name": "previousPrice",
+                "displayName": "Giá Cũ",
+                "type": "Number",
+                "displayType": "Number",
+                "defaultValue": 500000,
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
+    },
+    {
+        "name": "sizes",
+        "displayName": "sizes",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "sizeName",
+                "displayName": "sizeName",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
+    },
+    {
+        "name": "colors",
+        "displayName": "colors",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "colorName",
+                "displayName": "colorName",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "colorCode",
+                "displayName": "colorCode",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
     },
     {
         "name": "date",
