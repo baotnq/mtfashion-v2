@@ -51,10 +51,10 @@
             "value": "4"
         }
     ],
-    "images" :[
-    { 
-      "imageUrl" : ""
-    }
+    "images": [
+        {
+            "imageUrl": "images/background-700.png"
+        }
     ]
 }
 ---

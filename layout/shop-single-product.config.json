@@ -267,5 +267,24 @@
                 "required": false
             }
         ]
+    },
+    {
+        "name": "images",
+        "displayName": "images",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "imageUrl",
+                "displayName": "imageUrl",
+                "type": "Media",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
     }
 ]
