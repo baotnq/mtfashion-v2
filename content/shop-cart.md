@@ -17,7 +17,7 @@
             "num" : 1
         },
         {
-            "slug" : "san-pham-2",
+            "slug" : "san-pham-3",
             "title" : "Quần Jean Nữ",
             "SKU" : "",
             "imageUrl" : "images/background-700.png",
