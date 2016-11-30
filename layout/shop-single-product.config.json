@@ -80,10 +80,10 @@
     },
     {
         "name": "saleStatus",
-        "displayName": "saleStatus",
+        "displayName": "Khuyến Mãi",
         "type": "Text",
         "displayType": "ShortText",
-        "defaultValue": "",
+        "defaultValue": "Giảm giá",
         "validations": [],
         "viewOnly": false,
         "required": false
