@@ -45,10 +45,12 @@
                         </div>
                         <!-- end product rating -->
                         <!-- product name -->
-                        <span class="product-name-details text-uppercase font-weight-600 letter-spacing-2 black-text">Leather tote</span>
+                        <span class="product-name-details text-uppercase font-weight-600 letter-spacing-2 black-text">{{title}}</span>
                         <!-- end product name -->
                         <!-- product stock -->
-                        <p class="text-uppercase letter-spacing-2 margin-two">In Stock / Shipping Available</p>
+                        {{#if status}}
+                        <p class="text-uppercase letter-spacing-2 margin-two">{{status}}</p>
+                        {{/if}}
                         <!-- end product stock -->
                         <div class="separator-line bg-black no-margin-lr margin-five"></div>
                         <!-- product short description -->

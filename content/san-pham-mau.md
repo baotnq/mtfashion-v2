@@ -6,7 +6,7 @@
     "layout": "shop-single-product.html",
     "SKU": "",
     "title": "San pham mau",
-    "status": "",
+    "status": "Con Hang",
     "saleStatus": "",
     "sizes": [
         {
