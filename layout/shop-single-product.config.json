@@ -207,68 +207,6 @@
         ]
     },
     {
-        "name": "saleStatus",
-        "displayName": "Khuyến Mãi",
-        "type": "Text",
-        "validations": [],
-        "required": false,
-        "children": [
-            {
-                "name": "value",
-                "displayName": "value",
-                "type": "Text",
-                "displayType": "ShortText",
-                "defaultValue": "",
-                "validations": [],
-                "viewOnly": false,
-                "required": false
-            }
-        ],
-        "displayType": "ShortText",
-        "defaultValue": "Giảm giá",
-        "viewOnly": false
-    },
-    {
-        "name": "saleStatus",
-        "displayName": "Khuyến Mãi",
-        "type": "Text",
-        "validations": [],
-        "required": false,
-        "children": [
-            {
-                "name": "imageUrl",
-                "displayName": "imageUrl",
-                "type": "Media",
-                "displayType": "",
-                "defaultValue": "",
-                "validations": [],
-                "required": false
-            }
-        ],
-        "displayType": "ShortText",
-        "defaultValue": "Giảm giá",
-        "viewOnly": false
-    },
-    {
-        "name": "quality",
-        "displayName": "quality",
-        "type": "Array",
-        "validations": [],
-        "required": false,
-        "children": [
-            {
-                "name": "value",
-                "displayName": "value",
-                "type": "Text",
-                "displayType": "ShortText",
-                "defaultValue": "",
-                "validations": [],
-                "viewOnly": false,
-                "required": false
-            }
-        ]
-    },
-    {
         "name": "images",
         "displayName": "images",
         "type": "Array",
