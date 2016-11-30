@@ -58,9 +58,12 @@
                         <!-- end product short description -->
                         <span class="price black-text title-small">
                             {{#if price.previousPrice}}
-                            <del>{{price.previousPrice}} </del>
+                            <del>{{#addCommas price.previousPrice}}
+                            {{/addCommas}}
+                            </del>
                             {{/if}}
-                            {{price.currentPrice}} Đ</span>
+                            {{#addCommas price.currentPrice}}
+                            {{/addCommas}} Đ</span>
                         <div>
                             <!-- product color -->
                             <ul class="colors clearfix">
@@ -108,19 +111,17 @@
                             <div class="select-style med-input xs-med-input shop-shorting-details no-border-round">
                                 <!-- product qty -->
                                 <select>
-                                    <option value="">QTY</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                    {{#each quality}}
+                                      <option value="{{value}}">{{value}}</option>
+                                    {{/each}}
+                               
                                 </select>
                                 <!-- end product qty -->
                             </div>
                         </div>
                         <div class="col-md-9 col-sm-9 no-padding margin-five">
                             <!-- add to bag button -->
-                            <a class="highlight-button-dark btn btn-medium button" href="/shop-cart.html"><i class="icon-basket"></i> Add To Cart</a>
+                            <a class="highlight-button-dark btn btn-medium button" href="/shop-cart.html"><i class="icon-basket"></i>Thêm Vào Giỏ Hàng</a>
                             <!-- end add to bag button -->
                         </div>
                         <div class="col-lg-4 col-md-5 col-sm-3 no-padding-left">

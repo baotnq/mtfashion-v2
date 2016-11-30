@@ -212,6 +212,17 @@
         "type": "Array",
         "validations": [],
         "required": false,
-        "children": []
+        "children": [
+            {
+                "name": "value",
+                "displayName": "value",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
     }
 ]

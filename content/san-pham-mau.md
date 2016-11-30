@@ -25,19 +25,9 @@
             "colorCode": "#f16b4e"
         },
         {
-            "colorName" : "Cam",
-            "colorCode" : "#fca95e"
+            "colorName": "Cam",
+            "colorCode": "#fca95e"
         }
-    ],
-    "quality" : [
-    {  "value" : "1"
-    },
-    {  "value" : "2"
-    },
-    {  "value" : "3"
-    },
-    {  "value" : "4"
-    }
     ],
     "date": "20-11-2016 16:35:17",
     "publishDate": "",
@@ -45,7 +35,21 @@
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "price": {
         "currentPrice": 300000,
-        "previousPrice": 5000000
-    }
+        "previousPrice": 500000
+    },
+    "quality": [
+        {
+            "value": "1"
+        },
+        {
+            "value": "2"
+        },
+        {
+            "value": "3"
+        },
+        {
+            "value": "4"
+        }
+    ]
 }
 ---
