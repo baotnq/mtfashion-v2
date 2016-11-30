@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>EasyWebHub Advanced Template</title>
+	<meta name="description" content="Thousands of developers use EasyWebHub to build personal, company, blog, ecommerce websites, support their businesses, and work together on open source technologies.">
+	<meta name="keywords" content="website templates, easywebhub, easyapp">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript">
+    var baseHref = document.location.protocol + '//' + document.location.host;
+    var parts = document.location.href.split(/\//);
+    if (parts.length > 4) baseHref += '/' + parts[3];
+    document.write('<base href="' + baseHref + '" />');
+  </script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/github.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="css/frameworks-355fc5f5dc43030d495ea75b6bc8366695646a7566c13dd6ba2c2d358e1b5383.css">
+	<link rel="stylesheet" href="css/site-429acc2fc05149afec2a05196b3100560f117f753931d0afca46da6e1eeafe39.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Search field</h2>
+				<div id="custom-search-input">
+					<div class="input-group col-md-12">
+						<input id="searchField" type="text" class="form-control" placeholder="Search" />
+						<span class="input-group-btn">
+              <button class="btn btn-info btn-lg" id="searchBtn" type="button">
+                  <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <div class="row">
+			<div class="col-md-6">
+				<h2>Result</h2>
+        <textarea id="result" rows=10 style="width: 100%"></textarea>
+			</div>
+    </div>
+	</div>
+
+	<script src="js/lunr.js">
+  </script>
+	<script>
+    var searchIndex = $.ajax({
+      url: 'searchIndex.json',
+      method: 'GET',
+      dataType: 'json'
+    }).done(function(data) {
+      //console.log('data', data);
+      var idx = lunr.Index.load(data);
+
+      var doSearch = function() {
+        console.log('search', $('#searchField').val());
+        var results = idx.search($('#searchField').val());
+        if (results.length == 0) {
+          $('#result').val('<none>');
+        } else {
+          $('#result').val(JSON.stringify(results, null, 4));
+        }
+      };
+
+      $('#searchBtn').click(doSearch);
+      $('#searchField').keyup(function(event) {
+        if(event.which == 13) doSearch();
+      });
+    });
+  </script>
+</body>
+
+</html>
