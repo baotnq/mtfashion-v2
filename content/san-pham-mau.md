@@ -7,7 +7,7 @@
     "SKU": "",
     "title": "Sản Phẩm Mẫu",
     "status": "Còn Hàng",
-    "saleStatus": "",
+    "saleStatus": "SALE",
     "sizes": [
         {
             "sizeName": "M"
@@ -29,14 +29,10 @@
             "colorCode": "#fca95e"
         }
     ],
-    "date": "20-11-2016 16:35:17",
-    "publishDate": "",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "price": {
         "currentPrice": 300000,
         "previousPrice": 500000
     },
-    
     "images": [
         {
             "imageUrl": "images/background-700.png"
@@ -47,6 +43,10 @@
         {
             "imageUrl": "images/background-700.png"
         }
-    ]
+    ],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "date": "20-11-2016 16:35:17",
+    "publishDate": "",
+    "draft": false
 }
 ---
