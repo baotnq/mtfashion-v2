@@ -70,41 +70,23 @@
     },
     {
         "name": "status",
-        "displayName": "status",
+        "displayName": "Trạng Thái",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "Còn Hàng",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "saleStatus",
+        "displayName": "saleStatus",
         "type": "Text",
         "displayType": "ShortText",
         "defaultValue": "",
         "validations": [],
         "viewOnly": false,
         "required": false
-    },
-    {
-        "name": "price",
-        "displayName": "Giá Sản Phẩm",
-        "type": "Object",
-        "validations": [],
-        "required": false,
-        "children": [
-            {
-                "name": "currentPrice",
-                "displayName": "Giá Bán",
-                "type": "Number",
-                "displayType": "Number",
-                "defaultValue": 300000,
-                "validations": [],
-                "required": false
-            },
-            {
-                "name": "previousPrice",
-                "displayName": "Giá Cũ",
-                "type": "Number",
-                "displayType": "Number",
-                "defaultValue": 500000,
-                "validations": [],
-                "viewOnly": false,
-                "required": false
-            }
-        ]
     },
     {
         "name": "sizes",
@@ -195,5 +177,33 @@
         "validations": [],
         "viewOnly": false,
         "required": false
+    },
+    {
+        "name": "price",
+        "displayName": "Giá Sản Phẩm",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "currentPrice",
+                "displayName": "Giá Bán",
+                "type": "Number",
+                "displayType": "Number",
+                "defaultValue": 300000,
+                "validations": [],
+                "required": false
+            },
+            {
+                "name": "previousPrice",
+                "displayName": "Giá Cũ",
+                "type": "Number",
+                "displayType": "Number",
+                "defaultValue": 500000,
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
     }
 ]
