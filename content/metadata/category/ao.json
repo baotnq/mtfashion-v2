@@ -2,7 +2,7 @@
     "sortBy": "date",
     "reverse": false,
     "metadata": {},
-    "displayName": "ao",
+    "displayName": "Áo",
     "perPage": 10,
     "noPageOne": true,
     "layout": "default.category.html",
