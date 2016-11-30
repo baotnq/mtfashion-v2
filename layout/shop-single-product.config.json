@@ -163,5 +163,16 @@
         "validations": [],
         "viewOnly": false,
         "required": false
+    },
+    {
+        "name": "draft",
+        "displayName": "Draft",
+        "type": "Boolean",
+        "displayType": "",
+        "defaultValue": false,
+        "validations": [],
+        "hidden": false,
+        "viewOnly": false,
+        "required": true
     }
 ]
