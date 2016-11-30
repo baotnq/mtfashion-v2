@@ -99,5 +99,72 @@
         "hidden": false,
         "viewOnly": false,
         "required": true
+    },
+    {
+        "name": "orders",
+        "displayName": "orders",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "slug",
+                "displayName": "slug",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "title",
+                "displayName": "title",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "SKU",
+                "displayName": "SKU",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "imageUrl",
+                "displayName": "imageUrl",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "price",
+                "displayName": "price",
+                "type": "Number",
+                "displayType": "Number",
+                "defaultValue": 0,
+                "validations": [],
+                "required": false
+            },
+            {
+                "name": "num",
+                "displayName": "num",
+                "type": "Number",
+                "displayType": "Number",
+                "defaultValue": 0,
+                "validations": [],
+                "required": false
+            }
+        ]
     }
 ]

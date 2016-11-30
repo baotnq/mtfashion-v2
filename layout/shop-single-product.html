@@ -1,4 +1,4 @@
-{{#extend "default"}} 
+{{#extend "default"}}
    {{#content "main"}}
         <!-- head section -->
         <section class="content-top-margin page-title page-title-small border-bottom-light border-top-light">
@@ -13,7 +13,7 @@
                         </ul>
                         <!-- end breadcrumb -->
                     </div>
-                    {{!-- 
+                    {{!--
                     <div class="col-md-4 col-sm-5 wow fadeInUp header-nav text-right sm-margin-top-two" data-wow-duration="300ms">
                         <!-- next/previous -->
                         <a href="#" class="border-right"><i class="fa fa-angle-left"></i> Previous</a>
@@ -113,8 +113,7 @@
                         <div class="col-md-3 col-sm-3 no-padding-left margin-five">
                             <div class="select-style med-input xs-med-input shop-shorting-details no-border-round">
                                 <!-- product qty -->
-                                <select>
-                                    
+                                <select id="productQuantity">
                                       <option value="1">1</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>
@@ -125,7 +124,12 @@
                         </div>
                         <div class="col-md-9 col-sm-9 no-padding margin-five">
                             <!-- add to bag button -->
-                            <a class="highlight-button-dark btn btn-medium button" href="/shop-cart.html"><i class="icon-basket"></i>Thêm Vào Giỏ Hàng</a>
+                            <a class="highlight-button-dark btn btn-medium button addToCartBtn"
+                               data-title="{{title}}"
+                               data-sku="{{SKU}}"
+                               data-slug="{{slug}}"
+                               data-price="{{price.currentPrice}}"
+                            ><i class="icon-basket"></i>Thêm Vào Giỏ Hàng</a>
                             <!-- end add to bag button -->
                         </div>
                         <div class="col-lg-4 col-md-5 col-sm-3 no-padding-left">
@@ -146,7 +150,7 @@
                 </div>
             </div>
         </section>
-        {{!-- 
+        {{!--
         <section class="border-top">
             <div class="container">
                 <div class="row">
@@ -393,4 +397,3 @@
         <!-- end content section -->
   {{/content}}
 {{/extend}}
-       

@@ -43,7 +43,7 @@ $(document).ready(function () {
     /*==============================================================*/
     var isMobile = false;
     var isiPhoneiPad = false;
-    
+
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         isMobile = true;
     }
@@ -62,7 +62,7 @@ $(document).ready(function () {
     if (isiPhoneiPad) {
         jQuery(".video-wrapper").css('display', 'none');
     }
-    
+
     jQuery(".top-cart a.shopping-cart").click(function () {
         //$('.navbar-collapse').collapse('hide');
 
@@ -217,7 +217,7 @@ $(document).ready(function () {
     /*==============================================================*/
     //Sliders owlCarousel - START CODE
     /*==============================================================*/
-    
+
 
     $("#owl-demo").owlCarousel({
         navigation: true, // Show next and prev buttons
@@ -361,7 +361,7 @@ $(document).ready(function () {
         if ($(e.target).is('.mfp-close'))
             return;
         return false;
-    });    
+    });
     /*==============================================================*/
     //Stop Closing magnificPopup on selected elements - END CODE
     /*==============================================================*/
@@ -1123,10 +1123,10 @@ $(document).ready(function () {
         $(".fit-videos").fitVids();
     }
     catch(err) {
-        
+
     }
 
-    
+
     /*==============================================================*/
     //fit video  - END CODE
     /*==============================================================*/
@@ -1208,7 +1208,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
 
     /*==============================================================*/
     //Search - END CODE
@@ -1245,7 +1245,7 @@ $(document).ready(function () {
     //FORM TO EMAIL - START CODE
     /*==============================================================*/
     $("#success").hide();
-    
+
     $("#contact-us-button").click(function () {
         var error = validationContactUsForm();
         if (error) {
@@ -1287,7 +1287,7 @@ $(document).ready(function () {
             }
         });
         return error;
-    }    
+    }
 
     $("#notifyme-button").click(function () {
         var error = validationnotifymeForm();
@@ -1320,10 +1320,10 @@ $(document).ready(function () {
                     $("#notifymeform").find("input:eq(" + index + ")").css({ "border": "1px solid #dfdfdf" });
                 }
             }
-            
+
         });
         return error;
-    }       
+    }
 
     $("#success-free30daytrial").hide();
     $("#free30daytrial-button").click(function () {
@@ -1367,7 +1367,7 @@ $(document).ready(function () {
             }
         });
         return error;
-    }     
+    }
 
 
    $("#event-button").click(function () {
@@ -1403,7 +1403,7 @@ $(document).ready(function () {
             }
         });
         return error;
-    }          
+    }
 
     $("#careers-button").click(function () {
         var error = validationcareersForm();
@@ -1455,7 +1455,7 @@ $(document).ready(function () {
             }
         });
         return error;
-    }     
+    }
     /*==============================================================*/
     //FORM TO EMAIL - END CODE
     /*==============================================================*/
@@ -1588,7 +1588,7 @@ function isScrolledIntoView(elem)
             return false;
         }
 
-   
+
 }
 
 
@@ -1606,7 +1606,7 @@ $(window).scroll(function () {
 
     //Animate Elements in view position
     if (isScrolledIntoView('.chart')) {
-        if (inViewchart==false) 
+        if (inViewchart==false)
         {
         inViewchart = true;
 
@@ -1617,7 +1617,7 @@ $(window).scroll(function () {
         }
         catch (ex) {}
         });
-        
+
         $( ".chart2" ).each(function() {
         try {
             $(this).data('easyPieChart').update(0);
@@ -1626,88 +1626,88 @@ $(window).scroll(function () {
         catch (ex) {}
         });
          }
-    } 
-    
+    }
+
 
     if (isScrolledIntoView('#anim-number-pizza')) {
         if (inViewanimnumberpizza==false){
             inViewanimnumberpizza = true;
          animatecounters();
         }
-        
-    } 
-   
+
+    }
+
     if (isScrolledIntoView('#anim-number-projects')) {
         if (inViewanimnumberprojects==false){
         inViewanimnumberprojects = true;
 
          animatecounters();
      }
-        
-    } 
-     
+
+    }
+
     if (isScrolledIntoView('#anim-number-comments')) {
         if (inViewanimnumbercomments==false){
         inViewanimnumbercomments = true;
 
          animatecounters();
      }
-    } 
-    
+    }
+
     if (isScrolledIntoView('#counter1')) {
         if (inViewcounter1==false){
         inViewcounter1 = true;
 
          animatecounters();
      }
-    } 
-   
+    }
+
     if (isScrolledIntoView('#counter2')) {
         if (inViewcounter2==false){
         inViewcounter2 = true;
 
          animatecounters();
      }
-    } 
-   
+    }
+
     if (isScrolledIntoView('#counter3')) {
         if (inViewcounter3==false){
         inViewcounter3 = true;
 
          animatecounters();
      }
-    } 
-   
+    }
+
     if (isScrolledIntoView('#counter4')) {
         if (inViewcounter4==false){
         inViewcounter4 = true;
 
          animatecounters();
      }
-    } 
-   
+    }
+
     if (isScrolledIntoView('#counter5')) {
         if (inViewcounter5==false){
         inViewcounter5 = true;
         animatecounters();
     }
-    } 
-   
+    }
+
     if (isScrolledIntoView('#counter6')) {
         if (inViewcounter6==false){
         inViewcounter6 = true;
          animatecounters();
      }
-    } 
+    }
     if (isScrolledIntoView('#counter7')) {
         if (inViewcounter7==false){
         inViewcounter7 = true;
         animatecounters();
     }
-    } 
-     
+    }
 
-   
+
+
 });
 // Resize Header Menu
 function SetResizeHeaderMenu() {
@@ -1724,7 +1724,7 @@ function SetResizeHeaderMenu() {
 /*==============================================================*/
 //Parallax - START CODE
 /*==============================================================*/
-// Parallax Fix Image Scripts 
+// Parallax Fix Image Scripts
 
 $('.parallax-fix').each(function () {
     if ($(this).children('.parallax-background-img').length) {
@@ -1913,3 +1913,280 @@ $('.scrollToTop').click(function () {
 //Scroll To Top - END CODE
 /*==============================================================*/
 
+/** START - SHOPPING CART CODE **/
+$(document).ready(function () {
+    if (typeof(Storage) === 'undefined') {
+        console.log('localstorage not supported, shopping cart will not work');
+        return;
+    }
+
+    var navCartTotalItem = $('#navCartTotalItem');
+    var navCartTotalPrice = $('#navCartTotalPrice');
+    var navCartList = $('#navCartList');
+    var fullCartBody = $('#fullCartBody');
+    var fullCartClearCartBtn = $('#fullCartClearCartBtn');
+    var fullCartTotalPrice = $('#fullCartTotalPrice');
+    var fullCartCheckOutBtn = $('#fullCartCheckOutBtn');
+
+    var CART_STORE_KEY = 'cartData';
+    var Cart = {}; // Map of product with key is slug + productSize
+    window.Cart = Cart;
+
+    function SaveCart() {
+        localStorage.setItem(CART_STORE_KEY, JSON.stringify(Cart));
+    }
+
+    function ClearCart() {
+        Cart = {};
+        SaveCart();
+        UpdateNavCart();
+        UpdateFullCard();
+    }
+
+    function LoadCart() {
+        var cartDataStr = localStorage.getItem(CART_STORE_KEY);
+        if (cartDataStr) {
+            try {
+                Cart = JSON.parse(cartDataStr);
+            } catch(ex) {
+                console.log('load cart failed', ex);
+            }
+        }
+    }
+
+    function GenCartItemKey(product) {
+        return product.slug + '-' + product.size;
+    }
+
+    function AddToCart(product) {
+        var key = GenCartItemKey(product);
+        console.log('key', key);
+        var existsSameProduct = Cart[key];
+        if (existsSameProduct)
+            Cart[key].quantity += product.quantity;
+        else
+            Cart[key] = JSON.parse(JSON.stringify(product)); // quick and dirty clone object
+    }
+
+    // string format helper
+    if (!String.prototype.format) {
+        String.prototype.format = function() {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function(match, number) {
+                return typeof args[number] != 'undefined' ? args[number] : match;
+            });
+        };
+    }
+
+    function UpdateNavCart() {
+        if(!navCartTotalItem.length) return;
+
+        // update total item count
+        var uniqueItemCount = 0;
+        var totalPrice = 0;
+        for(var key in Cart) {
+            if(!Cart.hasOwnProperty(key)) continue;
+            uniqueItemCount += Cart[key].quantity;
+            totalPrice += Cart[key].quantity * Cart[key].price;
+        }
+        navCartTotalItem.text('(' + uniqueItemCount + ') ITEM' + (uniqueItemCount > 1 ? 'S' : ''));
+        console.log('UpdateNavCart', uniqueItemCount);
+
+        // update list product
+        var template =
+            '<li>' +
+                '<a title="Remove item" class="remove removeCartItemBtn" href="#" data-key="{5}">×</a>' +
+                '<a href="#{0}">' +
+                    '<img width="90" height="90" alt="" src="http://placehold.it/90x90">{1} Size {4}</a>' +
+                '<span class="quantity">{2} × <span class="amount">{3}</span></span>' +
+                '<a href="#">Edit</a>' +
+            '</li>';
+
+        var innerHtmlStr = '';
+        for(var key in Cart) {
+            if (!Cart.hasOwnProperty(key)) continue;
+            var cartItem = Cart[key];
+            innerHtmlStr += template.format(
+                cartItem.slug,
+                cartItem.title,
+                cartItem.quantity,
+                cartItem.price,
+                cartItem.size,
+                key
+            )
+        }
+        navCartList.html(innerHtmlStr);
+
+        // bind on click remove cart item
+        $('.removeCartItemBtn').click(function(e){
+            console.log('remove cart item', e.currentTarget.dataset.key);
+            delete Cart[e.currentTarget.dataset.key];
+            UpdateNavCart();
+            UpdateFullCard();
+            SaveCart();
+        })
+
+        // update total price
+        var totalPriceFormated = totalPrice.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+        navCartTotalPrice.text(totalPriceFormated);
+    }
+
+    function UpdateFullCard() {
+        if(!fullCartTotalPrice.length) return;
+        // update total item count
+        var uniqueItemCount = 0;
+        var totalPrice = 0;
+        for(var key in Cart) {
+            if(!Cart.hasOwnProperty(key)) continue;
+            uniqueItemCount += Cart[key].quantity;
+            totalPrice += Cart[key].quantity * Cart[key].price;
+        }
+
+        var template =
+            '<tr>'+
+                '<td class="product-thumbnail text-left">'+
+                    '<a href="/{0}"><img src="/images/background-800.png" alt="" ></a>'+
+                '</td>'+
+                '<td class="text-left">'+
+                    '<a href="/{0}">{1}</a>'+
+                    '<span class="text-uppercase display-block text-small margin-two">SKU: {2}</span>'+
+                '</td>'+
+                '<td class="text-left">{3}</td>'+
+                '<td class="product-quantity">'+
+                    '<div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">'+
+                        '<select class="fullCartQuantitySelect" data-key="{4}">'+
+                            '<option value="1">1</option>'+
+                            '<option value="2">2</option>'+
+                            '<option value="3">3</option>'+
+                            '<option value="4">4</option>'+
+                            '<option value="5">5</option>'+
+                            '<option value="6">6</option>'+
+                        '</select>'+
+                    '</div>'+
+                '</td>'+
+                '<td class="product-subtotal text-left">{5} VND</td>'+
+                '<td class="product-remove text-center">'+
+                    '<a href="#" data-key="{4}" class="fullCartRemoveItemBtn"><i class="fa fa-times"></i></a>'+
+                '</td>'+
+            '</tr>';
+
+        var innerHtmlStr = '';
+        for(var key in Cart) {
+            if (!Cart.hasOwnProperty(key)) continue;
+            var cartItem = Cart[key];
+            innerHtmlStr += template.format(
+                cartItem.slug,
+                cartItem.title,
+                cartItem.sku,
+                cartItem.price,
+                key,
+                cartItem.price *  cartItem.quantity
+            )
+        }
+        fullCartBody.html(innerHtmlStr);
+
+        var quantitySelectElms = $('.fullCartQuantitySelect');
+        // set item quantity
+        quantitySelectElms.each(function(index, quantitySelect){
+            $(quantitySelect).val(Cart[quantitySelect.dataset.key].quantity);
+        });
+
+        // bind quantitySelect
+        $('.fullCartQuantitySelect').on('change', function(e){
+            console.log('change', e.currentTarget.dataset.key, e.currentTarget.value);
+            Cart[e.currentTarget.dataset.key].quantity = parseInt(e.currentTarget.value);
+            UpdateNavCart();
+            UpdateFullCard();
+            SaveCart();
+        })
+
+        // bind remove item select
+        $('.fullCartRemoveItemBtn').click(function(e){
+            console.log('remove cart item', e.currentTarget.dataset.key);
+            delete Cart[e.currentTarget.dataset.key];
+            UpdateNavCart();
+            UpdateFullCard();
+            SaveCart();
+        })
+
+
+        // update total price
+        var totalPriceFormated = totalPrice.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+        fullCartTotalPrice.text(totalPriceFormated);
+    }
+
+    LoadCart(); // first load cart
+    UpdateNavCart();
+    UpdateFullCard();
+
+    console.log('Cart', Cart);
+
+
+    var curProduct = {};
+
+    // on choose product size
+    curProduct.size = $('.size-details li.active').text().trim();
+    $('.size-details a').click(function(e){
+        console.log('on Choose product size');
+        $('.size-details li').removeClass('active');
+
+        var target = $(e.currentTarget);
+        curProduct.size = target.text().trim(); // get size
+        target.parent().addClass('active'); // add class active
+        console.log('curProduct', curProduct);
+    });
+
+    // product quantity
+    curProduct.quantity = parseInt($('#productQuantity').val());
+    $('#productQuantity').on('change', function(e){
+        console.log('on Choose product quantity');
+        curProduct.quantity = parseInt(e.currentTarget.value);
+        console.log('curProduct', curProduct);
+    })
+
+    // click add to cart on shop-full-width will missing 'size' of product so right now will show shop-single-product instead
+    $('.addToCartBtn').click(function(event){
+        console.log('on Add to cart click');
+        for(var key in event.currentTarget.dataset) {
+            if (!event.currentTarget.dataset.hasOwnProperty(key)) continue;
+            // try parse value is int if possible
+            curProduct[key] = parseInt(event.currentTarget.dataset[key]);
+            if (isNaN(curProduct[key])){
+                curProduct[key] = event.currentTarget.dataset[key];
+            }
+        }
+
+        console.log('curProduct', curProduct);
+        AddToCart(curProduct);
+        UpdateNavCart();
+        SaveCart();
+    })
+
+    fullCartCheckOutBtn.click(function(){
+        // TODO post AJAX len server
+
+        var items = [];
+        var totalPrice = 0;
+        // flatten Cart to array
+        for(var key in Cart) {
+            if (!Cart.hasOwnProperty(key)) continue;
+            items.push(Cart[key]);
+            totalPrice += Cart[key].quantity * Cart[key].price;
+        }
+
+        var postData = {
+            items: items,
+            totalPrice: totalPrice
+        };
+        // TODO user ?
+
+        console.log('POST data', postData);
+        alert(JSON.stringify(postData, null, 4));
+    })
+
+    fullCartClearCartBtn.click(function(){
+        ClearCart();
+    })
+});
+
+/** END - SHOPPING CART CODE **/
