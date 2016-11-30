@@ -1,0 +1,85 @@
+[
+    {
+        "name": "sortBy",
+        "displayName": "sortBy",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "reverse",
+        "displayName": "reverse",
+        "type": "Boolean",
+        "defaultValue": false,
+        "validations": [],
+        "required": false
+    },
+    {
+        "name": "metadata",
+        "displayName": "metadata",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": []
+    },
+    {
+        "name": "displayName",
+        "displayName": "displayName",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "displayName": "perPage",
+        "type": "Number",
+        "displayType": "Number",
+        "defaultValue": 0,
+        "validations": [],
+        "required": false
+    },
+    {
+        "name": "noPageOne",
+        "displayName": "noPageOne",
+        "type": "Boolean",
+        "defaultValue": false,
+        "validations": [],
+        "required": false
+    },
+    {
+        "name": "layout",
+        "displayName": "layout",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "first",
+        "displayName": "first",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    },
+    {
+        "name": "path",
+        "displayName": "path",
+        "type": "Text",
+        "displayType": "ShortText",
+        "defaultValue": "",
+        "validations": [],
+        "viewOnly": false,
+        "required": false
+    }
+]

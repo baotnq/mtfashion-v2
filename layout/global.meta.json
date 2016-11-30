@@ -1,74 +1,5 @@
 [
     {
-        "name": "title",
-        "displayName": "title",
-        "type": "Text",
-        "validations": [],
-        "viewOnly": false,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
-    },
-    {
-        "name": "description",
-        "displayName": "description",
-        "type": "Text",
-        "validations": [],
-        "viewOnly": false,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
-    },
-    {
-        "name": "url",
-        "displayName": "url",
-        "type": "Text",
-        "validations": [],
-        "viewOnly": false,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
-    },
-    {
-        "name": "github-url",
-        "displayName": "github-url",
-        "type": "Text",
-        "validations": [],
-        "viewOnly": false,
-        "required": false,
-        "displayType": "ShortText",
-        "defaultValue": ""
-    },
-    {
-        "name": "meta-tag",
-        "displayName": "meta-tag",
-        "type": "Object",
-        "validations": [],
-        "required": false,
-        "children": [
-            {
-                "name": "keywords",
-                "displayName": "keywords",
-                "type": "Text",
-                "displayType": "ShortText",
-                "defaultValue": "",
-                "validations": [],
-                "viewOnly": false,
-                "required": false
-            },
-            {
-                "name": "author",
-                "displayName": "author",
-                "type": "Text",
-                "displayType": "ShortText",
-                "defaultValue": "",
-                "validations": [],
-                "viewOnly": false,
-                "required": false
-            }
-        ]
-    },
-    {
         "name": "contact",
         "displayName": "contact",
         "type": "Object",
@@ -127,6 +58,114 @@
             {
                 "name": "description",
                 "displayName": "description",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
+    },
+    {
+        "name": "url",
+        "displayName": "url",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": false,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "github-url",
+        "displayName": "github-url",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": false,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "meta-tag",
+        "displayName": "meta-tag",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "keywords",
+                "displayName": "keywords",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "author",
+                "displayName": "author",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
+    },
+    {
+        "name": "title",
+        "displayName": "title",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": false,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "description",
+        "displayName": "description",
+        "type": "Text",
+        "validations": [],
+        "viewOnly": false,
+        "required": false,
+        "displayType": "ShortText",
+        "defaultValue": ""
+    },
+    {
+        "name": "logo",
+        "displayName": "logo",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "name",
+                "displayName": "name",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "logo-light",
+                "displayName": "logo-light",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "logo-dark",
+                "displayName": "logo-dark",
                 "type": "Text",
                 "displayType": "ShortText",
                 "defaultValue": "",
