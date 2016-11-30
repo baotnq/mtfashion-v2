@@ -28,8 +28,6 @@
             "colorCode": "#FFFFF"
         }
     ],
-    "date": "20-11-2016 16:35:17",
-    "publishDate": "",
-    "draft": false
+    "date": "20-11-2016 16:35:17"
 }
 ---
