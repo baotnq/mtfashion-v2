@@ -54,6 +54,12 @@
     "images": [
         {
             "imageUrl": "images/background-700.png"
+        },
+        {
+            "imageUrl": "images/background-700.png"
+        },
+        {
+            "imageUrl": "images/background-700.png"
         }
     ]
 }
