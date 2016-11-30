@@ -6,5 +6,21 @@
     "meta-tag": {
         "keywords": "website templates, easywebhub, easyapp",
         "author": "VinaAS Co.,Ltd"
+    },
+    "logo" :
+    {
+        "name" : "MTFashion",
+        "logo-light" : "",
+        "logo-dark" : ""
+    },
+    "contact" : {
+        "phone" : "01236688909",
+        "address" : "85 Thoại Ngọc Hầu, Tan Phú",
+        "email" : "mytu358@gmail.com"
+    },
+
+    "aboutus" : {
+        "header" : "Giới thiệu website MTFashion",
+        "description" : "Giới thiệu chi tiết hơn về website bán hàng tại chỗ này"
     }
 }

@@ -67,5 +67,73 @@
                 "required": false
             }
         ]
+    },
+    {
+        "name": "contact",
+        "displayName": "contact",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "phone",
+                "displayName": "phone",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "address",
+                "displayName": "address",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "email",
+                "displayName": "email",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
+    },
+    {
+        "name": "aboutus",
+        "displayName": "aboutus",
+        "type": "Object",
+        "validations": [],
+        "required": false,
+        "children": [
+            {
+                "name": "header",
+                "displayName": "header",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            },
+            {
+                "name": "description",
+                "displayName": "description",
+                "type": "Text",
+                "displayType": "ShortText",
+                "defaultValue": "",
+                "validations": [],
+                "viewOnly": false,
+                "required": false
+            }
+        ]
     }
 ]
