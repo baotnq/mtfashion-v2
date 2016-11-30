@@ -38,10 +38,10 @@
             "imageUrl": "images/background-700.png"
         },
         {
-            "imageUrl": "images/background-700.png"
+            "imageUrl": "images/background-800.png"
         },
         {
-            "imageUrl": "images/background-700.png"
+            "imageUrl": "images/background-800.png"
         }
     ],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
