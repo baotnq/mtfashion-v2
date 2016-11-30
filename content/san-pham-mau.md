@@ -21,9 +21,23 @@
     ],
     "colors": [
         {
-            "colorName": "Trắng",
-            "colorCode": "#FFFFF"
+            "colorName": "Hồng",
+            "colorCode": "#f16b4e"
+        },
+        {
+            "colorName" : "Cam",
+            "colorCode" : "#fca95e"
         }
+    ],
+    "quality" : [
+    {  "value" : "1"
+    },
+    {  "value" : "2"
+    },
+    {  "value" : "3"
+    },
+    {  "value" : "4"
+    }
     ],
     "date": "20-11-2016 16:35:17",
     "publishDate": "",

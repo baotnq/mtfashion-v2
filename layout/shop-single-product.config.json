@@ -205,5 +205,13 @@
                 "required": false
             }
         ]
+    },
+    {
+        "name": "quality",
+        "displayName": "quality",
+        "type": "Array",
+        "validations": [],
+        "required": false,
+        "children": []
     }
 ]

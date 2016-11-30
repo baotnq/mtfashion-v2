@@ -54,28 +54,53 @@
                         <!-- end product stock -->
                         <div class="separator-line bg-black no-margin-lr margin-five"></div>
                         <!-- product short description -->
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p>{{description}}</p>
                         <!-- end product short description -->
-                        <span class="price black-text title-small"><del>$750</del>$450</span>
+                        <span class="price black-text title-small">
+                            {{#if price.previousPrice}}
+                            <del>{{price.previousPrice}} </del>
+                            {{/if}}
+                            {{price.currentPrice}} Đ</span>
                         <div>
                             <!-- product color -->
                             <ul class="colors clearfix">
-                                <li class="active"><a style="background:#f16b4e" href="#"></a></li>
-                                <li><a style="background:#f69679" href="#"></a></li>
+                                {{#each colors}}
+                                    {{#if @first}}
+                                      <li class="active">
+                                    {{else}}
+                                      <li>
+                                    {{/if}}
+                                    <a style="background:{{colorCode}}" href="#">{{colorName}}</a></li>
+                                <!--<li class="active"><a style="background:#f16b4e" href="#"></a></li>
+                                <li><a style="background:#{{colorCode}}" href="#"></a></li>
                                 <li><a style="background:#fca95e" href="#"></a></li>
                                 <li><a style="background:#7bbc72" href="#"></a></li>
-                                <li><a style="background:#4fb2ac" href="#"></a></li>
+                                <li><a style="background:#4fb2ac" href="#"></a></li>-->
+                                {{/each}}
                             </ul>
                             <!-- end product color -->
                             <!-- product size -->
                             <ul class="size clearfix size-details">
-                                <li class="active"><a href="#">XS</a></li>
+                                {{#each sizes}}
+                                    {{#if @first}}
+                                      <li class="active">
+                                    {{else}}
+                                      <li>
+                                    {{/if}}
+                                    <a  href="#">{{sizeName}}</a></li>
+                                <!--<li class="active"><a style="background:#f16b4e" href="#"></a></li>
+                                <li><a style="background:#{{colorCode}}" href="#"></a></li>
+                                <li><a style="background:#fca95e" href="#"></a></li>
+                                <li><a style="background:#7bbc72" href="#"></a></li>
+                                <li><a style="background:#4fb2ac" href="#"></a></li>-->
+                                {{/each}}
+                                <!--<li class="active"><a href="#">XS</a></li>
                                 <li><a href="#">S</a></li>
                                 <li><a href="#">M</a></li>
                                 <li><a href="#">L</a></li>
                                 <li><a href="#">XL</a></li>
                                 <li><a href="#">XXL</a></li>
-                                <li class="size-chart"><a href="#">Size Chart</a></li>
+                                <li class="size-chart"><a href="#">Size Chart</a></li>-->
                             </ul>
                             <!-- end product size -->
                         </div>
