@@ -1,6 +1,6 @@
 ---json
 {
-    "slug": "san-pham-1",
+    "slug": "san-pham-2",
     "category": "quan-jean",
     "tag": [],
     "layout": "shop-single-product.html",
