@@ -37,20 +37,7 @@
         "currentPrice": 300000,
         "previousPrice": 500000
     },
-    "quality": [
-        {
-            "value": "1"
-        },
-        {
-            "value": "2"
-        },
-        {
-            "value": "3"
-        },
-        {
-            "value": "4"
-        }
-    ],
+    
     "images": [
         {
             "imageUrl": "images/background-700.png"
