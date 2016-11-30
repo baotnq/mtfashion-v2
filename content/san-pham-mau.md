@@ -5,8 +5,8 @@
     "tag": [],
     "layout": "shop-single-product.html",
     "SKU": "",
-    "title": "San pham mau",
-    "status": "Con Hang",
+    "title": "Sản Phẩm Mẫu",
+    "status": "Còn Hàng",
     "saleStatus": "",
     "sizes": [
         {
