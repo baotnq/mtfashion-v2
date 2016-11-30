@@ -163,27 +163,5 @@
         "validations": [],
         "viewOnly": false,
         "required": false
-    },
-    {
-        "name": "publishDate",
-        "displayName": "Publish Date",
-        "type": "DateTime",
-        "displayType": "DateTime",
-        "defaultValue": "",
-        "validations": [],
-        "hidden": false,
-        "viewOnly": false,
-        "required": true
-    },
-    {
-        "name": "draft",
-        "displayName": "Draft",
-        "type": "Boolean",
-        "displayType": "",
-        "defaultValue": false,
-        "validations": [],
-        "hidden": false,
-        "viewOnly": false,
-        "required": true
     }
 ]
