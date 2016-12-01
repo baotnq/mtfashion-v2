@@ -1989,7 +1989,8 @@ $(document).ready(function () {
             uniqueItemCount += Cart[key].quantity;
             totalPrice += Cart[key].quantity * Cart[key].price;
         }
-        navCartTotalItem.text('(' + uniqueItemCount + ') ITEM' + (uniqueItemCount > 1 ? 'S' : ''));
+        // navCartTotalItem.text('(' + uniqueItemCount + ') Sản phẩm' + (uniqueItemCount > 1 ? 'S' : ''));
+        navCartTotalItem.text('(' + uniqueItemCount + ') Sản phẩm');
         console.log('UpdateNavCart', uniqueItemCount);
 
         // update list product
@@ -1999,7 +2000,7 @@ $(document).ready(function () {
                 '<a href="#{0}">' +
                     '<img width="90" height="90" alt="" src="http://placehold.it/90x90">{1} Size {4}</a>' +
                 '<span class="quantity">{2} × <span class="amount">{3}</span></span>' +
-                '<a href="#">Edit</a>' +
+                
             '</li>';
 
         var innerHtmlStr = '';
@@ -2044,7 +2045,7 @@ $(document).ready(function () {
 
         var template =
             '<tr>'+
-                '<td class="product-thumbnail text-left">'+
+                '<td class="product-thumbnail col-md-2 col-sm-3 text-left">'+
                     '<a href="/{0}"><img src="/images/background-800.png" alt="" ></a>'+
                 '</td>'+
                 '<td class="text-left">'+
@@ -2173,10 +2174,13 @@ $(document).ready(function () {
             items.push(Cart[key]);
             totalPrice += Cart[key].quantity * Cart[key].price;
         }
-
+        var name = document.getElementById('username');;
         var postData = {
             items: items,
-            totalPrice: totalPrice
+            totalPrice: totalPrice,
+            usename : document.getElementById('username').value,
+            phonenumber: document.getElementById('phonenumber').value,
+            email: document.getElementById('email').value,
         };
         // TODO user ?
 

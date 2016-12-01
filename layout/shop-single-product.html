@@ -7,7 +7,7 @@
                     <div class="col-md-8 col-sm-7 breadcrumb text-uppercase wow fadeInUp xs-display-none" data-wow-duration="600ms">
                         <!-- breadcrumb -->
                         <ul>
-                            <li><a href="/trang-chu">Trang Chủ</a></li>
+                            <li><a href="/">Trang Chủ</a></li>
                             <li><a href="#">{{category}}</a></li>
                             <li>{{title}}</li>
                         </ul>
@@ -43,7 +43,10 @@
                     <div class="col-md-5 col-sm-12 col-md-offset-1">
                         <!-- product rating -->
                         <div class="rating margin-five no-margin-top">
-                            <i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star-o black-text"></i><span class="rating-text text-uppercase">5 Reviews</span><span class="rating-text text-uppercase pull-right">SKU: <span class="black-text">290397</span></span>
+                            <i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star-o black-text"></i><span class="rating-text text-uppercase">5 Reviews</span>
+                            {{#if SKU}}
+                            <span class="rating-text text-uppercase pull-right">SKU: <span class="black-text">{{SKU}}</span></span>
+                            {{/if}}
                         </div>
                         <!-- end product rating -->
                         <!-- product name -->
@@ -110,7 +113,7 @@
                             </ul>
                             <!-- end product size -->
                         </div>
-                        <div class="col-md-3 col-sm-3 no-padding-left margin-five">
+                        <div class="col-md-2 col-sm-2 no-padding-left margin-five">
                             <div class="select-style med-input xs-med-input shop-shorting-details no-border-round">
                                 <!-- product qty -->
                                 <select id="productQuantity">
@@ -122,28 +125,38 @@
                                 <!-- end product qty -->
                             </div>
                         </div>
-                        <div class="col-md-9 col-sm-9 no-padding margin-five">
+                        <div class="col-md-10 col-sm-10 no-padding margin-five">
                             <!-- add to bag button -->
                             <a class="highlight-button-dark btn btn-medium button addToCartBtn"
                                data-title="{{title}}"
                                data-sku="{{SKU}}"
                                data-slug="{{slug}}"
                                data-price="{{price.currentPrice}}"
-                            ><i class="icon-basket"></i>Thêm Vào Giỏ Hàng</a>
+                            ><i class="icon-basket"></i>Thêm</a>
+                            <a class="highlight-button btn btn-medium button" href="/shop-cart"
+                            ><i class="fa fa-shopping-cart"></i>Mua</a>
                             <!-- end add to bag button -->
                         </div>
+                         
                         <div class="col-lg-4 col-md-5 col-sm-3 no-padding-left">
                             <!-- add to wishlist link -->
+                            {{!--
                             <a title="Add to Wishlist" href="#" class="text-uppercase text-small vertical-align-middle"><i class="fa fa-heart-o black-text"></i> Add to wishlist</a>
                             <!-- end add to wishlist link -->
+                            --}}
                         </div>
+                        
                         <div class="col-md-8 col-sm-9 product-details-social no-padding">
                             <!-- social media sharing -->
                             <span class="black-text text-uppercase text-small vertical-align-middle margin-right-five">Share on</span>
                             <a href="/https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            {{!-- 
                             <a href="/https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                            --}}
                             <a href="/https://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+                            {{!--
                             <a href="/https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            --}}
                             <!-- end social media sharing -->
                         </div>
                     </div>
