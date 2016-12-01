@@ -12,11 +12,11 @@
         <link rel="apple-touch-icon" href="/images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
-        <!-- animation --> 
+        <!-- animation -->
         <link rel="stylesheet" href="/css/animate.css" />
-        <!-- bootstrap --> 
+        <!-- bootstrap -->
         <link rel="stylesheet" href="/css/bootstrap.css" />
-        <!-- et line icon --> 
+        <!-- et line icon -->
         <link rel="stylesheet" href="/css/et-line-icons.css" />
         <!-- font-awesome icon -->
         <link rel="stylesheet" href="/css/font-awesome.min.css" />
@@ -61,7 +61,7 @@
                            <div class="col-md-2 search-cart-header pull-right">
                                <div id="top-search">
                                    <!-- search input-->
-                                   <form method="post" action="#" name="s" class="search-form">			
+                                   <form method="post" action="#" name="s" class="search-form">
                                        <i class="fa fa-search close-search search-button"></i>
                                        <input type="text" name="search" class="search-input" placeholder="Search...">
                                    </form>
@@ -71,24 +71,22 @@
                                    <!-- nav shopping bag -->
                                    <a href="#" class="shopping-cart">
                                        <i class="fa fa-shopping-cart"></i>
-                                       <div class="subtitle">(1) Items</div>
+                                       <div class="subtitle" id="navCartTotalItem">(1) Sản phẩm</div>
                                    </a>
                                    <!-- end nav shopping bag -->
                                    <!-- shopping bag content -->
                                    <div class="cart-content">
-                                       <ul class="cart-list">
+                                       <ul class="cart-list" id="navCartList">
                                            <li>
                                                <a title="Remove item" class="remove" href="#">×</a>
                                                <a href="#">
                                                    <img width="90" height="90" alt="" src="http://placehold.it/90x90">Leather Craft</a>
-                                               <span class="quantity">1 × <span class="amount">$160</span></span>
-                                               <a href="#">Edit</a>
+                                               <span class="quantity">1 × <span class="amount"></span></span>
                                            </li>
                                        </ul>
-                                       <p class="total">Subtotal: <span class="amount">$160</span></p>
+                                       <p class="total">Tổng cộng: <span class="amount" id="navCartTotalPrice">$160</span></p>
                                        <p class="buttons">
-                                           <a href="/shop-cart.html" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">View Cart</a>
-                                           <a href="/shop-checkout.html" class="btn btn-very-small-white no-margin-bottom margin-seven no-margin-right pull-right">Checkout</a>
+                                           <a href="/shop-cart" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">Mua Ngay</a>
                                        </p>
                                    </div>
                                    <!-- end shopping bag content -->
@@ -105,7 +103,7 @@
                                <div class="navbar-collapse collapse">
                                    <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
                                        <!-- menu item -->
-                                       <li class="dropdown panel"><a href="#collapse1" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Home <i class="fa fa-angle-down"></i></a>                      
+                                       <li class="dropdown panel"><a href="#collapse1" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Trang Chủ<i class="fa fa-angle-down"></i></a>
                                            <!-- sub menu -->
                                            <ul id="collapse1" class="dropdown-menu mega-menu panel-collapse collapse mega-menu-full">
                                                <!-- sub menu column  -->
@@ -115,7 +113,7 @@
                                                        <li class="dropdown-header">Pre Made Homepage</li>
                                                        <li><a href="/index.html">Home main</a></li>
                                                        <li><a href="/home-fashion.html">Home fashion</a></li>
-                                                    
+       
                                                    </ul>
                                                    <!-- end sub menu item  -->
                                                </li>
@@ -132,7 +130,7 @@
                        </div>
                    </div>
                </nav>
-               <!--end navigation panel --> 
+               <!--end navigation panel -->
         <!-- head section -->
         <section class="content-top-margin page-title page-title-small bg-gray">
             <div class="container">
@@ -171,78 +169,83 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="product-thumbnail text-left">
-                                        <a href="/san-pham-1"><img src="/images/background-800.png" alt="" ></a>
-                                    </td>
-                                    <td class="text-left">
-                                        <a href="/san-pham-1">Quần Jean Nam</a>
-                                    </td>
-                                    <td class="text-left">
-                                        300,000 VND
-                                    </td>
-                                    <td class="product-quantity">
-                                        <div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal text-left">300,000 VND</td>
-                                    <td class="product-remove text-center">
-                                        <a href="javascript:void(0)"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail text-left">
-                                        <a href="/san-pham-3"><img src="/images/background-700.png" alt="" ></a>
-                                    </td>
-                                    <td class="text-left">
-                                        <a href="/san-pham-3">Quần Jean Nữ</a>
-                                    </td>
-                                    <td class="text-left">
-                                        250,000 VND
-                                    </td>
-                                    <td class="product-quantity">
-                                        <div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal text-left">250,000 VND</td>
-                                    <td class="product-remove text-center">
-                                        <a href="javascript:void(0)"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
+                            <tbody id="fullCartBody">
+                                <!---->
+                                <!--<tr>-->
+                                    <!--<td class="product-thumbnail text-left">-->
+                                        <!--<a href="/san-pham-1"><img src="/images/background-800.png" alt="" ></a>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-left">-->
+                                        <!--<a href="/san-pham-1">Quần Jean Nam</a>-->
+                                        <!---->
+                                    <!--</td>-->
+                                    <!--<td class="text-left">-->
+                                        <!--300,000 VND-->
+                                    <!--</td>-->
+                                    <!--<td class="product-quantity">-->
+                                        <!--<div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">-->
+                                            <!--<select id="">-->
+                                                <!--<option value="1">1</option>-->
+                                                <!--<option value="2">2</option>-->
+                                                <!--<option value="3">3</option>-->
+                                                <!--<option value="4">4</option>-->
+                                                <!--<option value="5">5</option>-->
+                                                <!--<option value="6">6</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td class="product-subtotal text-left">300,000 VND</td>-->
+                                    <!--<td class="product-remove text-center">-->
+                                        <!--<a href="javascript:void(0)"><i class="fa fa-times"></i></a>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!---->
+                                <!--<tr>-->
+                                    <!--<td class="product-thumbnail text-left">-->
+                                        <!--<a href="/san-pham-3"><img src="/images/background-700.png" alt="" ></a>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-left">-->
+                                        <!--<a href="/san-pham-3">Quần Jean Nữ</a>-->
+                                        <!---->
+                                    <!--</td>-->
+                                    <!--<td class="text-left">-->
+                                        <!--250,000 VND-->
+                                    <!--</td>-->
+                                    <!--<td class="product-quantity">-->
+                                        <!--<div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">-->
+                                            <!--<select id="">-->
+                                                <!--<option value="1">1</option>-->
+                                                <!--<option value="2">2</option>-->
+                                                <!--<option value="3">3</option>-->
+                                                <!--<option value="4">4</option>-->
+                                                <!--<option value="5">5</option>-->
+                                                <!--<option value="6">6</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td class="product-subtotal text-left">250,000 VND</td>-->
+                                    <!--<td class="product-remove text-center">-->
+                                        <!--<a href="javascript:void(0)"><i class="fa fa-times"></i></a>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!---->
                             </tbody>
                         </table>
                     </div>
                     <div class="col-sm-12 cupon padding-five border-top border-bottom">
-                        <button class="highlight-button btn btn-very-small no-margin pull-left">Empty Cart</button>
+                        <button class="highlight-button btn btn-very-small no-margin pull-left" id="fullCartClearCartBtn">Empty Cart</button>
                         <a class="highlight-button btn btn-very-small no-margin pull-right continue-shopping" href="/">Continue Shopping</a>
-                    
+
                     </div>
-                    
+
                     <div class="col-sm-12 padding-five no-padding-bottom">
                         <div class="col-md-6 col-sm-7 col-md-offset-1 no-padding-right xs-no-padding">
                             <table class="table cart-total">
                                 <tbody>
-                                    
+
                                     <tr class="total">
                                         <th class="padding-two text-uppercase text-right no-padding-right font-weight-600 text-large xs-no-padding">Tổng Cộng Đơn Hàng</th>
-                                        <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text text-large no-letter-spacing xs-no-padding">700,000 Đồng </td>
+                                        <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text text-large no-letter-spacing xs-no-padding"><span id="fullCartTotalPrice">700,000</span> Đồng </td>
                                     </tr>
                                     <tr>
                                         <td class="padding-one no-padding-right xs-no-padding" colspan="2">
@@ -251,16 +254,43 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a class="highlight-button-black-background btn no-margin pull-right checkout-btn" href="#">Hoàn Tất</a>
+                            <div class="col-md-9">
+                                <div class="form-group no-margin-bottom">
+                                    <!-- label  -->
+                                    <label for="username" class="text-uppercase">Tên Khách Hàng</label>
+                                    <!-- end label  -->
+                                    <!-- input  -->
+                                    <input type="text" name="username" id="username">
+                                    <!-- end input  -->
+                                </div>
+                                <div class="form-group no-margin-bottom">
+                                    <!-- label  -->
+                                    <label for="phonenumber" class="text-uppercase">Số Điện Thoại</label>
+                                    <!-- end label  -->
+                                    <!-- input  -->
+                                    <input type="text" name="phonenumber" id="phonenumber">
+                                    <!-- end input  -->
+                                </div>
+                                <div class="form-group no-margin-bottom">
+                                    <!-- label  -->
+                                    <label for="email" class="text-uppercase">Email</label>
+                                    <!-- end label  -->
+                                    <!-- input  -->
+                                    <input type="text" name="email" id="email">
+                                    <!-- end input  -->
+                                </div>
+                                <!-- button  -->
+                            </div>
+                            <a class="highlight-button-black-background btn no-margin pull-right checkout-btn" id="fullCartCheckOutBtn" href="#">Hoàn Tất</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
         <!-- end content section -->
 
-       
+
         <!-- footer -->
                <footer>
                    <div class=" bg-white footer-top">
@@ -336,13 +366,13 @@
                    <!-- scroll to top End... --> 
                </footer>
                <!-- end footer -->
-        <!-- javascript libraries --> 
+        <!-- javascript libraries -->
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/modernizr.js"></script>
-        <script type="text/javascript" src="/js/bootstrap.js"></script> 
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
         <script type="text/javascript" src="/js/bootstrap-hover-dropdown.js"></script>
-        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script> 
-        <script type="text/javascript" src="/js/skrollr.min.js"></script>  
+        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="/js/skrollr.min.js"></script>
         <script type="text/javascript" src="/js/smooth-scroll.js"></script>
         <!-- animation -->
         <script type="text/javascript" src="/js/wow.min.js"></script>
@@ -352,8 +382,8 @@
         <script type="text/javascript" src="/js/jquery.easypiechart.js"></script>
         <!-- parallax -->
         <script type="text/javascript" src="/js/jquery.parallax-1.1.3.js"></script>
-        <!--portfolio with shorting tab --> 
-        <script type="text/javascript" src="/js/jquery.isotope.min.js"></script> 
+        <!--portfolio with shorting tab -->
+        <script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
         <!-- owl slider  -->
         <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
         <!-- magnific popup  -->
@@ -370,7 +400,7 @@
         <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
         <!-- imagesloaded  -->
         <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
-        <!-- setting --> 
+        <!-- setting -->
         <script type="text/javascript" src="/js/main.js"></script>
     </body>
 </html>

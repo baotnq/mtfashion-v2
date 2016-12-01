@@ -62,7 +62,7 @@
                             <div class="col-md-2 search-cart-header pull-right">
                                 <div id="top-search">
                                     <!-- search input-->
-                                    <form method="post" action="#" name="s" class="search-form">			
+                                    <form method="post" action="#" name="s" class="search-form">
                                         <i class="fa fa-search close-search search-button"></i>
                                         <input type="text" name="search" class="search-input" placeholder="Search...">
                                     </form>
@@ -72,24 +72,22 @@
                                     <!-- nav shopping bag -->
                                     <a href="#" class="shopping-cart">
                                         <i class="fa fa-shopping-cart"></i>
-                                        <div class="subtitle">(1) Items</div>
+                                        <div class="subtitle" id="navCartTotalItem">(1) Sản phẩm</div>
                                     </a>
                                     <!-- end nav shopping bag -->
                                     <!-- shopping bag content -->
                                     <div class="cart-content">
-                                        <ul class="cart-list">
+                                        <ul class="cart-list" id="navCartList">
                                             <li>
                                                 <a title="Remove item" class="remove" href="#">×</a>
                                                 <a href="#">
                                                     <img width="90" height="90" alt="" src="http://placehold.it/90x90">Leather Craft</a>
-                                                <span class="quantity">1 × <span class="amount">$160</span></span>
-                                                <a href="#">Edit</a>
+                                                <span class="quantity">1 × <span class="amount"></span></span>
                                             </li>
                                         </ul>
-                                        <p class="total">Subtotal: <span class="amount">$160</span></p>
+                                        <p class="total">Tổng cộng: <span class="amount" id="navCartTotalPrice">$160</span></p>
                                         <p class="buttons">
-                                            <a href="/shop-cart.html" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">View Cart</a>
-                                            <a href="/shop-checkout.html" class="btn btn-very-small-white no-margin-bottom margin-seven no-margin-right pull-right">Checkout</a>
+                                            <a href="/shop-cart" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">Mua Ngay</a>
                                         </p>
                                     </div>
                                     <!-- end shopping bag content -->
@@ -106,7 +104,7 @@
                                 <div class="navbar-collapse collapse">
                                     <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
                                         <!-- menu item -->
-                                        <li class="dropdown panel"><a href="#collapse1" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Home <i class="fa fa-angle-down"></i></a>                      
+                                        <li class="dropdown panel"><a href="#collapse1" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Trang Chủ<i class="fa fa-angle-down"></i></a>
                                             <!-- sub menu -->
                                             <ul id="collapse1" class="dropdown-menu mega-menu panel-collapse collapse mega-menu-full">
                                                 <!-- sub menu column  -->
@@ -116,7 +114,7 @@
                                                         <li class="dropdown-header">Pre Made Homepage</li>
                                                         <li><a href="/index.html">Home main</a></li>
                                                         <li><a href="/home-fashion.html">Home fashion</a></li>
-                                                     
+        
                                                     </ul>
                                                     <!-- end sub menu item  -->
                                                 </li>
@@ -133,7 +131,7 @@
                         </div>
                     </div>
                 </nav>
-                <!--end navigation panel --> 
+                <!--end navigation panel -->
 
 
    <!-- head section -->
@@ -169,7 +167,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        
+
                         <div class="shorting clearfix xs-margin-top-three">
                             <div class="col-md-8 col-sm-8 grid-nav">
                                 <a href="/"><i class="fa fa-bars"></i></a>
@@ -190,7 +188,7 @@
                                     <span class="onsale onsale-style-2">Sale</span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-mau" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +203,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-1" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +218,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-2" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -235,7 +233,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-7" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -250,7 +248,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-8" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -265,7 +263,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-3" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -280,7 +278,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-4" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -295,7 +293,7 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-5" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
@@ -310,12 +308,12 @@
                                     </span>
                                     <div class="quick-buy">
                                         <div class="product-share">
-                                            <a href="/shop-cart" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="/san-pham-6" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Xem Chi Tiết</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                         <!-- end pagination -->
