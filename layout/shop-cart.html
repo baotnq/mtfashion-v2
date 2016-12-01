@@ -12,11 +12,11 @@
         <link rel="apple-touch-icon" href="/images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
-        <!-- animation --> 
+        <!-- animation -->
         <link rel="stylesheet" href="/css/animate.css" />
-        <!-- bootstrap --> 
+        <!-- bootstrap -->
         <link rel="stylesheet" href="/css/bootstrap.css" />
-        <!-- et line icon --> 
+        <!-- et line icon -->
         <link rel="stylesheet" href="/css/et-line-icons.css" />
         <!-- font-awesome icon -->
         <link rel="stylesheet" href="/css/font-awesome.min.css" />
@@ -82,50 +82,50 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                {{#each orders}}
-                                <tr>
-                                    <td class="product-thumbnail text-left">
-                                        <a href="/{{slug}}"><img src="/{{imageUrl}}" alt="" ></a>
-                                    </td>
-                                    <td class="text-left">
-                                        <a href="/{{slug}}">{{title}}</a>
-                                        {{#if SKU}}
-                                        <span class="text-uppercase display-block text-small margin-two">SKU: {{SKU}}</span>
-                                        {{/if}}
-                                    </td>
-                                    <td class="text-left">
-                                        {{#addCommas price}} {{/addCommas}} VND
-                                    </td>
-                                    <td class="product-quantity">
-                                        <div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">
-                                            <select>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal text-left">{{#addCommas price}} {{/addCommas}} VND</td>
-                                    <td class="product-remove text-center">
-                                        <a href="javascript:void(0)"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                {{/each}}
+                            <tbody id="fullCartBody">
+                                <!--{{#each orders}}-->
+                                <!--<tr>-->
+                                    <!--<td class="product-thumbnail text-left">-->
+                                        <!--<a href="/{{slug}}"><img src="/{{imageUrl}}" alt="" ></a>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-left">-->
+                                        <!--<a href="/{{slug}}">{{title}}</a>-->
+                                        <!--{{#if SKU}}-->
+                                        <!--<span class="text-uppercase display-block text-small margin-two">SKU: {{SKU}}</span>-->
+                                        <!--{{/if}}-->
+                                    <!--</td>-->
+                                    <!--<td class="text-left">-->
+                                        <!--{{#addCommas price}} {{/addCommas}} VND-->
+                                    <!--</td>-->
+                                    <!--<td class="product-quantity">-->
+                                        <!--<div class="select-style med-input shop-shorting shop-shorting-cart no-border-round">-->
+                                            <!--<select id="">-->
+                                                <!--<option value="1">1</option>-->
+                                                <!--<option value="2">2</option>-->
+                                                <!--<option value="3">3</option>-->
+                                                <!--<option value="4">4</option>-->
+                                                <!--<option value="5">5</option>-->
+                                                <!--<option value="6">6</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                    <!--<td class="product-subtotal text-left">{{#addCommas price}} {{/addCommas}} VND</td>-->
+                                    <!--<td class="product-remove text-center">-->
+                                        <!--<a href="javascript:void(0)"><i class="fa fa-times"></i></a>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--{{/each}}-->
                             </tbody>
                         </table>
                     </div>
                     <div class="col-sm-12 cupon padding-five border-top border-bottom">
-                        <button class="highlight-button btn btn-very-small no-margin pull-left">Empty Cart</button>
+                        <button class="highlight-button btn btn-very-small no-margin pull-left" id="fullCartClearCartBtn">Empty Cart</button>
                         <a class="highlight-button btn btn-very-small no-margin pull-right continue-shopping" href="/">Continue Shopping</a>
-                    
+
                     </div>
-                    
+
                     <div class="col-sm-12 padding-five no-padding-bottom">
-                        {{!-- 
+                        {{!--
                         <div class="col-md-5 col-sm-5 calculate no-padding-left xs-margin-bottom-ten xs-no-padding">
                             <div class="panel panel-default border margin-five no-margin-top">
                                 <div class="panel-heading no-padding" id="headingOne" role="tablist">
@@ -172,10 +172,10 @@
                         <div class="col-md-6 col-sm-7 col-md-offset-1 no-padding-right xs-no-padding">
                             <table class="table cart-total">
                                 <tbody>
-                                    
+
                                     <tr class="total">
                                         <th class="padding-two text-uppercase text-right no-padding-right font-weight-600 text-large xs-no-padding">Tổng Cộng Đơn Hàng</th>
-                                        <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text text-large no-letter-spacing xs-no-padding">{{#addCommas 700000}} {{/addCommas}} Đồng </td>
+                                        <td class="padding-two text-uppercase text-right no-padding-right font-weight-600 black-text text-large no-letter-spacing xs-no-padding"><span id="fullCartTotalPrice">{{#addCommas 700000}} {{/addCommas}}</span> Đồng </td>
                                     </tr>
                                     <tr>
                                         <td class="padding-one no-padding-right xs-no-padding" colspan="2">
@@ -184,25 +184,25 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a class="highlight-button-black-background btn no-margin pull-right checkout-btn" href="#">Hoàn Tất</a>
+                            <a class="highlight-button-black-background btn no-margin pull-right checkout-btn" id="fullCartCheckOutBtn" href="#">Hoàn Tất</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
         <!-- end content section -->
 
-       
+
        {{> footer}}
 
-        <!-- javascript libraries --> 
+        <!-- javascript libraries -->
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/modernizr.js"></script>
-        <script type="text/javascript" src="/js/bootstrap.js"></script> 
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
         <script type="text/javascript" src="/js/bootstrap-hover-dropdown.js"></script>
-        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script> 
-        <script type="text/javascript" src="/js/skrollr.min.js"></script>  
+        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="/js/skrollr.min.js"></script>
         <script type="text/javascript" src="/js/smooth-scroll.js"></script>
         <!-- animation -->
         <script type="text/javascript" src="/js/wow.min.js"></script>
@@ -212,8 +212,8 @@
         <script type="text/javascript" src="/js/jquery.easypiechart.js"></script>
         <!-- parallax -->
         <script type="text/javascript" src="/js/jquery.parallax-1.1.3.js"></script>
-        <!--portfolio with shorting tab --> 
-        <script type="text/javascript" src="/js/jquery.isotope.min.js"></script> 
+        <!--portfolio with shorting tab -->
+        <script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
         <!-- owl slider  -->
         <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
         <!-- magnific popup  -->
@@ -230,7 +230,7 @@
         <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
         <!-- imagesloaded  -->
         <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
-        <!-- setting --> 
+        <!-- setting -->
         <script type="text/javascript" src="/js/main.js"></script>
     </body>
 </html>

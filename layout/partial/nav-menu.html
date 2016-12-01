@@ -16,15 +16,15 @@
                     <div class="col-md-2 search-cart-header pull-right">
                         <div id="top-search">
                             <!-- search input-->
-                            <form method="post" action="#" name="s" class="search-form">			
+                            <form method="post" action="#" name="s" class="search-form">
                                 <i class="fa fa-search close-search search-button"></i>
                                 <input type="text" name="search" class="search-input" placeholder="Search...">
                             </form>
                             <!-- end search input -->
-                            {{!-- 
+                            {{!--
                             <!-- nav search -->
                             <i class="fa fa-search search-button"></i>
-                            <div class="subtitle">Search</div>                    
+                            <div class="subtitle">Search</div>
                             <!-- end nav search -->
                             --}}
                         </div>
@@ -32,24 +32,24 @@
                             <!-- nav shopping bag -->
                             <a href="#" class="shopping-cart">
                                 <i class="fa fa-shopping-cart"></i>
-                                <div class="subtitle">(1) Items</div>
+                                <div class="subtitle" id="navCartTotalItem">(1) Items</div>
                             </a>
                             <!-- end nav shopping bag -->
                             <!-- shopping bag content -->
                             <div class="cart-content">
-                                <ul class="cart-list">
+                                <ul class="cart-list" id="navCartList">
                                     <li>
                                         <a title="Remove item" class="remove" href="#">×</a>
                                         <a href="#">
                                             <img width="90" height="90" alt="" src="http://placehold.it/90x90">Leather Craft</a>
-                                        <span class="quantity">1 × <span class="amount">$160</span></span>
+                                        <span class="quantity">1 × <span class="amount"></span></span>
                                         <a href="#">Edit</a>
                                     </li>
                                 </ul>
-                                <p class="total">Subtotal: <span class="amount">$160</span></p>
+                                <p class="total">Subtotal: <span class="amount" id="navCartTotalPrice">$160</span></p>
                                 <p class="buttons">
-                                    <a href="/shop-cart.html" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">View Cart</a>
-                                    <a href="/shop-checkout.html" class="btn btn-very-small-white no-margin-bottom margin-seven no-margin-right pull-right">Checkout</a>
+                                    <a href="/shop-cart" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">View Cart</a>
+                                    <a href="/shop-checkout" class="btn btn-very-small-white no-margin-bottom margin-seven no-margin-right pull-right">Checkout</a>
                                 </p>
                             </div>
                             <!-- end shopping bag content -->
@@ -66,7 +66,7 @@
                         <div class="navbar-collapse collapse">
                             <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
                                 <!-- menu item -->
-                                <li class="dropdown panel"><a href="#collapse1" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Home <i class="fa fa-angle-down"></i></a>                      
+                                <li class="dropdown panel"><a href="#collapse1" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Home <i class="fa fa-angle-down"></i></a>
                                     <!-- sub menu -->
                                     <ul id="collapse1" class="dropdown-menu mega-menu panel-collapse collapse mega-menu-full">
                                         <!-- sub menu column  -->
@@ -76,7 +76,7 @@
                                                 <li class="dropdown-header">Pre Made Homepage</li>
                                                 <li><a href="/index.html">Home main</a></li>
                                                 <li><a href="/home-fashion.html">Home fashion</a></li>
-                                             
+
                                             </ul>
                                             <!-- end sub menu item  -->
                                         </li>
@@ -84,7 +84,7 @@
                                         {{!--                                         <!-- sub menu column -->
                                         <li class="mega-menu-column col-sm-3">
                                             <!-- sub menu item  -->
-                                            <ul>       
+                                            <ul>
                                                 <li class="dropdown-header">Other</li>
                                                 <li><a href="/home-masonry-portfolio.html">Home - masonry portfolio</a></li>
                                                 <li><a href="/home-background-slider.html">Home - background slider</a></li>
@@ -138,7 +138,7 @@
                                                 <li><a href="/intro-product.html">Product Intro</a></li>
                                             </ul>
                                             <!-- end sub menu item  -->
-                                        </li> 
+                                        </li>
                                         <!-- end sub menu column  -->
                                         --}}
 
@@ -146,7 +146,7 @@
                                     <!-- end sub menu -->
                                 </li>
                                 <!-- end menu item -->
-                                {{!-- 
+                                {{!--
                                 <!-- menu item -->
                                 <li class="dropdown panel"><a href="#collapse4" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                                     <!-- sub menu -->
@@ -175,7 +175,7 @@
                                                 <li><a href="/services.html">Services</a></li>
                                                 <li><a href="/faq.html">FAQ'S</a></li>
                                                 <li><a href="/login.html">Login</a></li>
-                                                <li><a href="/register.html">Register</a></li>                                                
+                                                <li><a href="/register.html">Register</a></li>
                                                 <li><a href="/404.html">Not Found (404)</a></li>
                                                 <li><a href="/maintenance.html">Maintenance Page</a></li>
                                                 <li><a href="/home-countdown-timer.html">Under Construction</a></li>
@@ -216,7 +216,7 @@
                                     <!-- end sub menu -->
                                 </li>
                                 <!-- end menu item -->
-                               
+
                                 <!-- menu item -->
                                 <li class="dropdown panel"><a href="#collapse5" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
                                     <!-- sub menu -->
@@ -249,7 +249,7 @@
                                                 <li><a href="/portfolio-grid-with-title-5columns.html">5 Columns</a></li>
                                             </ul>
                                             <!-- end sub menu item  -->
-                                        </li>    
+                                        </li>
                                         <li class="mega-menu-column col-sm-3">
                                             <!-- sub menu item  -->
                                             <ul>
@@ -278,7 +278,7 @@
                                                 <li><a href="/portfolio-wide-with-title-gutter-5columns.html">5 Columns</a></li>
                                             </ul>
                                             <!-- sub menu item  -->
-                                        </li>                                     
+                                        </li>
                                         <li class="mega-menu-column col-sm-3">
                                             <!-- sub menu item  -->
                                             <ul>
@@ -297,7 +297,7 @@
                                                 <li><a href="/portfolio-lightbox.html">Portfolio lightbox</a></li>
                                             </ul>
                                             <!-- end sub menu item  -->
-                                        </li> 
+                                        </li>
                                         <li class="mega-menu-column col-sm-3">
                                             <!-- sub menu item  -->
                                             <ul>
@@ -319,13 +319,13 @@
                                                 <li><a href="/onepage-single-project-page5.html" class="simple-ajax-popup-align-top">Single Project Page 5</a></li>
                                             </ul>
                                             <!-- end sub menu item  -->
-                                        </li>  
+                                        </li>
                                     </ul>
                                     <!-- end sub menu -->
                                 </li>
                                 <!-- end menu item -->
-                           
-                                --}}  
+
+                                --}}
                             </ul>
                         </div>
                     </div>
@@ -333,4 +333,4 @@
                 </div>
             </div>
         </nav>
-        <!--end navigation panel --> 
+        <!--end navigation panel -->
