@@ -2185,7 +2185,12 @@ $(document).ready(function () {
         // TODO user ?
 
         console.log('POST data', postData);
-        alert(JSON.stringify(postData, null, 4));
+
+        var order = firebase.database().ref('orders');
+                order.push(postData);
+                order.on('child_added', (data) => {
+                alert(JSON.stringify(data, null, 4));
+                });
     })
 
     fullCartClearCartBtn.click(function(){
