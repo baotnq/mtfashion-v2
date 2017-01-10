@@ -2188,8 +2188,8 @@ $(document).ready(function () {
 
         var order = firebase.database().ref('orders');
                 order.push(postData);
-                order.on('child_added', (data) => {
-                alert(JSON.stringify(data, null, 4));
+                order.once('child_added', (data) => {
+                alert(JSON.stringify(data.val(), null, 4));
                 });
     })
 
