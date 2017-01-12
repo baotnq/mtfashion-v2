@@ -1,0 +1,96 @@
+{
+    "_$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "slug": {
+            "type": "string",
+            "propertyOrder": 100,
+            "readOnly": true,
+            "options": {
+                "hidden": false
+            }
+        },
+        "category": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "tag": {
+            "type": "array",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "enum": []
+            }
+        },
+        "layout": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "title": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "description": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "slideshow": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "banner": {
+                    "type": "string"
+                }
+            },
+            "propertyOrder": 1000
+        },
+        "date": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "draft": {
+            "type": "boolean",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "__content__": {
+            "type": "string",
+            "format": "text",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "publishDate": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}
