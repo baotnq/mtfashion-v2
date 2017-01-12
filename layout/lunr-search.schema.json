@@ -1,0 +1,132 @@
+{
+    "_$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "header": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "description": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "permalink": {
+            "type": "boolean",
+            "propertyOrder": 1000
+        },
+        "objectNode": {
+            "type": "object",
+            "properties": {
+                "stringChild": {
+                    "type": "string"
+                },
+                "numberChild": {
+                    "type": "string"
+                },
+                "objectChild": {
+                    "type": "object",
+                    "properties": {
+                        "booleanChild": {
+                            "type": "boolean"
+                        },
+                        "arrayChild": {
+                            "type": "array",
+                            "items": {},
+                            "format": "table"
+                        }
+                    }
+                }
+            },
+            "propertyOrder": 1000
+        },
+        "arrayNumberNode": {
+            "type": "array",
+            "items": {},
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "arrayStringNode": {
+            "type": "array",
+            "items": {},
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "arrayObjectNode": {
+            "type": "array",
+            "items": {},
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "slug": {
+            "type": "string",
+            "propertyOrder": 100,
+            "readOnly": true,
+            "options": {
+                "hidden": false
+            }
+        },
+        "layout": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "publishDate": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "draft": {
+            "type": "boolean",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "date": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "category": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "tag": {
+            "type": "array",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "enum": []
+            }
+        },
+        "__content__": {
+            "type": "string",
+            "format": "text",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

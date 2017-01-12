@@ -1,0 +1,109 @@
+{
+    "_$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "slug": {
+            "type": "string",
+            "propertyOrder": 100,
+            "readOnly": true,
+            "options": {
+                "hidden": false
+            }
+        },
+        "description": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "category": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "tag": {
+            "type": "array",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "enum": []
+            }
+        },
+        "layout": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "date": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "orders": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "slug": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "SKU": {
+                        "type": "string"
+                    },
+                    "imageUrl": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "integer"
+                    },
+                    "num": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "__content__": {
+            "type": "string",
+            "format": "text",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "publishDate": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "draft": {
+            "type": "boolean",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

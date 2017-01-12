@@ -1,0 +1,152 @@
+{
+    "_$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "slug": {
+            "type": "string",
+            "propertyOrder": 100,
+            "readOnly": true,
+            "options": {
+                "hidden": false
+            }
+        },
+        "category": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "tag": {
+            "type": "array",
+            "format": "table",
+            "propertyOrder": 100,
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "enum": []
+            }
+        },
+        "layout": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "SKU": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "title": {
+            "type": "string",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "status": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "saleStatus": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "sizes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "sizeName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "colors": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "price": {
+            "type": "object",
+            "properties": {
+                "currentPrice": {
+                    "type": "integer"
+                },
+                "previousPrice": {
+                    "type": "integer"
+                }
+            },
+            "propertyOrder": 1000
+        },
+        "images": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "imageUrl": {
+                        "title": "",
+                        "description": "",
+                        "default": "",
+                        "format": "upload",
+                        "required": false,
+                        "readOnly": false,
+                        "pattern": "",
+                        "propertyOrder": 1000,
+                        "minLength": 0,
+                        "maxLength": 0,
+                        "options": {
+                            "hidden": false
+                        },
+                        "type": "string"
+                    }
+                }
+            },
+            "format": "table",
+            "propertyOrder": 1000
+        },
+        "description": {
+            "type": "string",
+            "propertyOrder": 1000
+        },
+        "date": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": false
+            }
+        },
+        "publishDate": {
+            "type": "string",
+            "format": "datetime",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "draft": {
+            "type": "boolean",
+            "format": "checkbox",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        },
+        "__content__": {
+            "type": "string",
+            "format": "text",
+            "propertyOrder": 100,
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}
